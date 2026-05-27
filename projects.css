@@ -136,7 +136,7 @@
 
         border-left-width: 0px;
 
-        background-color: #362583;
+        background-color: #2e365c
     }
 
     aside2 {
@@ -152,7 +152,7 @@
 
         border-right-width: 0px;
 
-        background-color: #362583;
+        background-color: #2e365c
     }
  
     main {
@@ -174,12 +174,12 @@
  
         padding-bottom: 10px;
 
-        background-color: #362583;
+        background-color: #2e365c
     }
  
     .argh {
  
-        background-color: #343434;    
+        background-color: #c9c9c9;    
  
         border: 3px solid #000000;
  
@@ -301,7 +301,7 @@
     }
 
     .box {
-        background-color: #343434;
+        background-color: #c9c9c9;
 
         border: 3px solid #000000;
 
@@ -319,7 +319,7 @@
     }
 
 	.boxLeft {
-        background-color: #343434;
+        background-color: #c9c9c9;
         
         border: 3px solid #000000;
         
@@ -339,7 +339,7 @@
     }
 
 	.boxRight {    
-        background-color: #343434;
+        background-color: #c9c9c9;
         
         border: 3px solid #000000;
         
@@ -353,7 +353,7 @@
     }
 
 	.boxRight2 {
-        background-color: #343434;
+        background-color: #c9c9c9;
         
         border: 3px solid #000000;
         
@@ -377,7 +377,7 @@
     }
 
 	.boxRightGallery {
-        background-color: #343434;
+        background-color: #c9c9c9;
 
         border: 3px solid #000000;
 
@@ -395,7 +395,7 @@
     } 
 
     .sideheader {
-        background-color: #343434;
+        background-color: #c9c9c9;
 
         border: 3px solid #000000;
 
@@ -403,7 +403,7 @@
     }
 
     .button {
-        background-color: #343434;
+        background-color: #c9c9c9;
 
         border: 3px solid #000000;
 
