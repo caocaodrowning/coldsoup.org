@@ -1,0 +1,32 @@
+
+#player,#player a{ color:transparent; }
+#player{ background:url(); background-position:bottom; background-color: transparent; }
+#player .mainImage{ background:url(https://galoom.neocities.org/assets/pbasic7.png); }
+
+#player #baseLeft{ width:0px; }
+#player #baseRight{ width:0px;}
+#player .button{ width:0px; }
+#player #play{ background:url(https://galoom.neocities.org/assets/pbasic7.png); }
+#player #play,#player #pause{ left:0px; }
+#player #previous{ left:0px; }
+#player #next{ left:0px; }
+#player #title{ left:0px; }
+#player #tooltip{ right:0px; }
+#player #timer{ right:0px; }
+#player #list{ right:0px; }
+
+#player #seeker{ right:0px; }
+#player #seekerBase{ border-color:transparent; }
+#player #seekerBuffered{ background-color:transparent; }
+#player #seekerSliderBase{ background-color:transparent; }
+
+#player #volume{ width:0px; right:0px; }
+#player #volumeSlider{ width:0px; background:url(); }
+
+#playlist,#playlist .module,#playlist h3{ border-color:transparent; }
+#playlist .module{ color:#eee; background-color:#fff; }
+#playlist h3{ background:url(https://galoom.neocities.org/assets/pbasic7.png); color:transparent; background-color:#0; }
+
+#playlist .even{background-color:transparent; }
+#playlist .odd{ background-color:transparent; }
+#playlist .focus{ background-color:transparent; color:#aaa;}
