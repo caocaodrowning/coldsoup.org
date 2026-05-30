@@ -22,14 +22,6 @@
         margin: -100%
     }
 
-    button {
-        padding: 0;
-
-        border: none;
-        
-        background: none;
-    }
-
     :root {
 
         --header-image: url('');
@@ -142,6 +134,8 @@
         background-size: 15%;
 
         display: flex;
+
+        justify-content: center;
     }
 
     aside {
@@ -186,6 +180,28 @@
         background-color: var(--margin-color);
     }
 
+    aside3 {
+        background-size: 15%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        width: 230px;
+
+        min-width: 230px;
+
+        border: none;
+
+        padding: 10px;
+
+        padding-bottom: 10px;
+
+        border-left-width: 0px;
+
+        background-color: none;
+    }
+
     main {
         background-size: 15%;
 
@@ -202,6 +218,10 @@
         padding-bottom: 10px;
 
         background-color: var(--margin-color);
+
+        margin: 0 auto;
+        
+        display: block;
     }
 
     main2 {
@@ -213,7 +233,7 @@
 
         flex-direction: column;
 
-        width: 800px;
+        width: 100%;
 
         border: 3px solid #000000;
 
@@ -257,6 +277,8 @@
         width: 800px;
 
         border: 3px solid #000000;
+
+        margin: 0 auto;
     }
 
     .argh2 {
@@ -366,6 +388,8 @@
 
     footer {
         padding: 1px;
+
+        padding-right: 130px;
 
         font-size: 13px;
 
