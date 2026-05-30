@@ -187,9 +187,9 @@
 
         flex-direction: column;
 
-        width: 230px;
+        width: 217px;
 
-        min-width: 230px;
+        min-width: 217px;
 
         border: none;
 
@@ -215,13 +215,11 @@
 
         padding-left: 0px;
 
+        padding-right: 10px;
+
         padding-bottom: 10px;
 
         background-color: var(--margin-color);
-
-        margin: 0 auto;
-        
-        display: block;
     }
 
     main2 {
