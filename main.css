@@ -279,6 +279,16 @@
         
         position: relative;
     }
+    
+    main:before {
+        content: "";
+        background: none;
+        position: absolute;
+        top: -2.5px;
+        right: -3px;
+        height: 32px;
+        width: 3px;
+    }
 
     main:after {
         content: "";
