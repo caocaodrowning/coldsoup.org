@@ -174,7 +174,7 @@
         margin-top: 30px;
 
         padding-top: 10px;
-
+                                                                                                                         
         padding-right: 0px;
 
         padding-left: 10px;
@@ -235,9 +235,9 @@
 
         flex-direction: column;
 
-        width: 217px;
+        width: 214px;
 
-        min-width: 217px;
+        min-width: 214px;
 
         border: none;
 
@@ -561,15 +561,9 @@
 
         border: 3px solid #000000;
 
-        padding: 0px;
-
         margin-bottom: 10px;
 
         height: 100%;
-
-        justify-content: center;
-        vertical-align: middle;
-        line-height: normal;
     }
 
 
@@ -677,12 +671,6 @@
         padding-top: 8px;
 
         margin-bottom: 10px;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
     }
 
     #topBar {
