@@ -32,11 +32,11 @@
 
         --sidebar-image: ;
 
-        --margin-color: #8d8ebf;
+        --margin-color: #9181b1;
 
-        --main-color: #aeffa7;
+        --main-color: #2b7c3aa6;
 
-        --text-color: #db0000;
+        --text-color: #1d1d1d;
 
         --project-color: #ffcccc;
 
@@ -111,6 +111,8 @@
     }
 
     #navbar {
+        font-family: 'NewsCycle-Regular';
+
         height: 40px;
 
         width: 100%;
@@ -132,12 +134,18 @@
     }
 
     #navbar li {
+        font-family: 'NewsCycle-Regular';
         padding-top: 10px;
     }
 
     #navbar li a {
+        font-family: 'NewsCycle-Regular';
 
         color: white;
+        
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+        font-size: 20px;
 
         font-weight: 800;
 
@@ -148,8 +156,6 @@
     #navbar li a:hover {
 
         color: #a49cba;
-
-        text-decoration: underline;
     }
 
     #flex {
@@ -356,19 +362,6 @@
         left: -3px;
         height: 32px;
         width: 3px;
-    }
-    
-    .btn-nav {
-        font-family: 'NewsCycle-Regular';
-        font-style: normal;
-        font-stretch: normal;
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        text-align: center;
-        vertical-align: middle;
-        white-space: nowrap;
-        color: var(--text-color);
     }
 
     .argh {
