@@ -14,20 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const path = window.location.pathname;
         const cleanFile = getCleanName(path);
         
-        // Check if the HTML file natively served by Neocities/hosting is your 404 container
         const activeContainer = document.getElementById("container");
         const isReal404Page = activeContainer && activeContainer.getAttribute("data-track") === "/assets/audio/lily.mp3";
 
-        // If the server served our 404 page due to a broken URL, do NOT try to fetch the broken URL file!
+        // If the server served our 404 page due to a broken URL, sync immediately
         if (isReal404Page) {
             console.log("Real 404 error detected via server layout. Halting silent navigation boot.");
             manageAudioTracks();
             syncStylesToBody();
-            bindLinks(); // Ensures navbar links still work on the 404 screen
+            bindLinks(); 
             return;
         }
 
-        // Proceed with normal single-page application booting rules
         if (path.endsWith("index.html") || path === "/" || path === "" || cleanFile === "index") {
             await handleNavigation("home.html");
             history.replaceState({ url: "home.html" }, "", "home");
@@ -110,7 +108,13 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!fileUrl || fileUrl === ".html") return;
 
             const response = await fetch(fileUrl);
-            if (!response.ok) throw new Error("Could not fetch file.");
+            
+            // FIXED: If the file does not exist, manually reroute the SPA to load 404.html layouts smoothly
+            if (!response.ok) {
+                console.warn("Target page not found. Rerouting inner shell to 404 layout.");
+                await handleNavigation("/404.html");
+                return;
+            }
 
             const htmlText = await response.text();
 
@@ -143,7 +147,6 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
             console.error("Router error handling navigation:", error);
             
-            // Break infinite rapid-refresh loops by cross-checking locations before a hard redirect
             const currentClean = getCleanName(window.location.pathname);
             const targetClean = getCleanName(fileUrl);
             if (currentClean !== targetClean) {
@@ -169,10 +172,9 @@ document.addEventListener("DOMContentLoaded", () => {
         handleNavigation(targetFile);
     };
 
-    // Run launcher initialization on document setup ready
     initSite();
 
-    // --- 7. BROWSER BUTTON EVENT BINDING (Back & Forward arrows) ---
+    // --- 7. BROWSER BUTTON EVENT BINDING ---
     window.addEventListener("popstate", (e) => {
         if (e.state && e.state.url) {
             handleNavigation(e.state.url);
