@@ -3,17 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const DEFAULT_TRACK = "/assets/audio/i-was-a-prisoner-in-your-site.mp3";
 
-    // This object acts as a local storage vault to hold your page HTML in advance
     const pageCache = {};
 
-    // Helper to safely clean up file extensions for comparison
     const getCleanName = (path) => {
         const file = path.split("/").pop() || "";
         return file.replace(".html", "");
     };
 
-    // --- 1. INITIAL SILENT BOOT ---
-    const initSite = async () => {
+const initSite = async () => {
         const path = window.location.pathname;
         const cleanFile = getCleanName(path);
         
@@ -23,7 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isReal404Page) {
             console.log("Real 404 error detected via server layout. Halting silent navigation boot.");
             manageAudioTracks();
-            // We do NOT call syncStylesToBody() here so the body stays clean while overlay is up
+            
+            syncStylesToBody(); 
+            
             bindLinks(); 
             prefetchPages(); 
             return;
@@ -44,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
         prefetchPages(); 
     };
 
-    // --- 2. AUTOMATED BACKGROUND PREFETCHER ---
     const prefetchPages = () => {
         document.querySelectorAll(".nav-link").forEach(async (link) => {
             const fileUrl = link.getAttribute("href");
@@ -64,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    // --- 3. GLOBAL ENTER SITE OVERLAY TRIGGER ---
     document.addEventListener("click", (e) => {
         const enterBtn = e.target.closest("#enter-btn");
         const overlay = document.getElementById("intro-overlay");
@@ -72,16 +69,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (enterBtn && overlay) {
             e.preventDefault(); 
 
-            // 1. Immediately start fading out the overlay text block element
             overlay.style.opacity = "0";
 
-            // 2. TIMEOUT DELAY: Wait 300ms for overlay to dim, then swap to live animated backgrounds
             setTimeout(() => {
                 document.body.classList.add("animation-running");
                 syncStylesToBody(); 
             }, 300); 
 
-            // 3. Clean up the overlay DOM node permanently after transition complete
             setTimeout(() => {
                 overlay.remove();
                 manageAudioTracks();
@@ -89,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // --- 4. DYNAMIC MUSIC TRACK MANAGER ---
     const manageAudioTracks = () => {
         const activeContainer = document.getElementById("container");
         if (!activeContainer) return;
@@ -112,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-// --- 5. BODY STYLE SYNCHRONIZER ---
     const syncStylesToBody = () => {
         const activeContainer = document.getElementById("container");
 
@@ -131,11 +123,9 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.style.removeProperty("--bg-image");
             document.body.style.removeProperty("--bg-size");
             document.body.style.removeProperty("--bg-position-start");
-            // CLEANED: Removed the style cleanup for the static property layer
         }
     };
 
-    // --- 6. CONTAINER ROUTER ENGINE ---
     const handleNavigation = async (fileUrl) => {
         try {
             if (!fileUrl || fileUrl === ".html") return;
@@ -193,7 +183,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // --- 7. NAVIGATION LINK EVENT BINDERS ---
     const bindLinks = () => {
         document.querySelectorAll(".nav-link").forEach(link => {
             link.removeEventListener("click", linkClickEvent);
@@ -212,7 +201,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initSite();
 
-    // --- 8. BROWSER BUTTON EVENT BINDING ---
     window.addEventListener("popstate", (e) => {
         if (e.state && e.state.url) {
             handleNavigation(e.state.url);
