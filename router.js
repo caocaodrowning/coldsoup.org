@@ -3,24 +3,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const DEFAULT_TRACK = "/assets/audio/i-was-a-prisoner-in-your-site.mp3";
 
+    // Helper to safely clean up file extensions for comparison
+    const getCleanName = (path) => {
+        const file = path.split("/").pop() || "";
+        return file.replace(".html", "");
+    };
+
+    // --- 1. INITIAL SILENT BOOT ---
     const initSite = async () => {
         const path = window.location.pathname;
+        const cleanFile = getCleanName(path);
+        
+        // Check if the HTML file natively served by Neocities/hosting is your 404 container
+        const activeContainer = document.getElementById("container");
+        const isReal404Page = activeContainer && activeContainer.getAttribute("data-track") === "/assets/audio/lily.mp3";
 
-        if (path.endsWith("index.html") || path === "/" || path === "") {
+        // If the server served our 404 page due to a broken URL, do NOT try to fetch the broken URL file!
+        if (isReal404Page) {
+            console.log("Real 404 error detected via server layout. Halting silent navigation boot.");
+            manageAudioTracks();
+            syncStylesToBody();
+            bindLinks(); // Ensures navbar links still work on the 404 screen
+            return;
+        }
+
+        // Proceed with normal single-page application booting rules
+        if (path.endsWith("index.html") || path === "/" || path === "" || cleanFile === "index") {
             await handleNavigation("home.html");
             history.replaceState({ url: "home.html" }, "", "home");
         } else {
-            const currentFile = path.split("/").pop();
-            if (currentFile && currentFile.endsWith(".html")) {
-                await handleNavigation(currentFile);
-            } else if (currentFile) {
-                await handleNavigation(currentFile + ".html");
+            if (path.endsWith(".html")) {
+                await handleNavigation(cleanFile + ".html");
+            } else if (cleanFile) {
+                await handleNavigation(cleanFile + ".html");
             }
         }
 
         manageAudioTracks();
     };
 
+    // --- 2. GLOBAL ENTER SITE OVERLAY TRIGGER ---
     document.addEventListener("click", (e) => {
         const enterBtn = e.target.closest("#enter-btn");
         const overlay = document.getElementById("intro-overlay");
@@ -39,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // --- 3. DYNAMIC MUSIC TRACK MANAGER ---
     const manageAudioTracks = () => {
         const activeContainer = document.getElementById("container");
         if (!activeContainer) return;
@@ -61,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // --- 4. BODY STYLE SYNCHRONIZER ---
     const syncStylesToBody = () => {
         const activeContainer = document.getElementById("container");
 
@@ -80,8 +104,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // --- 5. CONTAINER ROUTER ENGINE ---
     const handleNavigation = async (fileUrl) => {
         try {
+            if (!fileUrl || fileUrl === ".html") return;
+
             const response = await fetch(fileUrl);
             if (!response.ok) throw new Error("Could not fetch file.");
 
@@ -114,11 +141,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 bindLinks();
             }
         } catch (error) {
-            console.error("Router error:", error);
-            window.location.href = fileUrl;
+            console.error("Router error handling navigation:", error);
+            
+            // Break infinite rapid-refresh loops by cross-checking locations before a hard redirect
+            const currentClean = getCleanName(window.location.pathname);
+            const targetClean = getCleanName(fileUrl);
+            if (currentClean !== targetClean) {
+                window.location.href = fileUrl;
+            }
         }
     };
 
+    // --- 6. NAVIGATION LINK EVENT BINDERS ---
     const bindLinks = () => {
         document.querySelectorAll(".nav-link").forEach(link => {
             link.removeEventListener("click", linkClickEvent);
@@ -135,13 +169,20 @@ document.addEventListener("DOMContentLoaded", () => {
         handleNavigation(targetFile);
     };
 
+    // Run launcher initialization on document setup ready
     initSite();
 
+    // --- 7. BROWSER BUTTON EVENT BINDING (Back & Forward arrows) ---
     window.addEventListener("popstate", (e) => {
         if (e.state && e.state.url) {
             handleNavigation(e.state.url);
         } else {
-            handleNavigation("home.html");
+            const cleanFile = getCleanName(window.location.pathname);
+            if (cleanFile && cleanFile !== "home") {
+                handleNavigation(cleanFile + ".html");
+            } else {
+                handleNavigation("home.html");
+            }
         }
     });
 });
