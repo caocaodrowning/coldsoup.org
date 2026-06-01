@@ -3,40 +3,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const DEFAULT_TRACK = "/assets/audio/i-was-a-prisoner-in-your-site.mp3";
 
-    // Helper to safely clean up file extensions for comparison
-    const getCleanName = (path) => {
-        const file = path.split("/").pop() || "";
-        return file.replace(".html", "");
-    };
-
-    // --- 1. INITIAL SILENT BOOT ---
     const initSite = async () => {
         const path = window.location.pathname;
-        const cleanFile = getCleanName(path);
-        
-        // If they land on the root domain or index, fetch home.html into the wrapper
-        if (path.endsWith("index.html") || path === "/" || path === "" || cleanFile === "index") {
+
+        if (path.endsWith("index.html") || path === "/" || path === "") {
             await handleNavigation("home.html");
             history.replaceState({ url: "home.html" }, "", "home");
         } else {
-            // Re-fetch the current file cleanly based on whatever route they refreshed on
-            if (path.endsWith(".html")) {
-                await handleNavigation(cleanFile + ".html");
-            } else if (cleanFile) {
-                await handleNavigation(cleanFile + ".html");
+            const currentFile = path.split("/").pop();
+            if (currentFile && currentFile.endsWith(".html")) {
+                await handleNavigation(currentFile);
+            } else if (currentFile) {
+                await handleNavigation(currentFile + ".html");
             }
         }
 
         manageAudioTracks();
     };
 
-    // --- 2. GLOBAL ENTER SITE OVERLAY TRIGGER ---
     document.addEventListener("click", (e) => {
         const enterBtn = e.target.closest("#enter-btn");
         const overlay = document.getElementById("intro-overlay");
 
         if (enterBtn && overlay) {
-            e.preventDefault();
+            e.preventDefault(); 
 
             overlay.style.opacity = "0";
             document.body.classList.add("animation-running");
@@ -49,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // --- 3. DYNAMIC MUSIC TRACK MANAGER ---
     const manageAudioTracks = () => {
         const activeContainer = document.getElementById("container");
         if (!activeContainer) return;
@@ -72,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // --- 4. BODY STYLE SYNCHRONIZER ---
     const syncStylesToBody = () => {
         const activeContainer = document.getElementById("container");
 
@@ -92,12 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // --- 5. CONTAINER ROUTER ENGINE ---
     const handleNavigation = async (fileUrl) => {
         try {
-            // Prevent attempting to fetch empty or corrupt paths
-            if (!fileUrl || fileUrl === ".html") return;
-
             const response = await fetch(fileUrl);
             if (!response.ok) throw new Error("Could not fetch file.");
 
@@ -130,18 +114,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 bindLinks();
             }
         } catch (error) {
-            console.error("Router error handling navigation:", error);
-            // FIXED: If we are already on a broken route, do NOT force an infinite reload loop.
-            // Only force reload if the fileUrl isn't matching our current clean window location.
-            const currentClean = getCleanName(window.location.pathname);
-            const targetClean = getCleanName(fileUrl);
-            if (currentClean !== targetClean) {
-                window.location.href = fileUrl;
-            }
+            console.error("Router error:", error);
+            window.location.href = fileUrl;
         }
     };
 
-    // --- 6. NAVIGATION LINK EVENT BINDERS ---
     const bindLinks = () => {
         document.querySelectorAll(".nav-link").forEach(link => {
             link.removeEventListener("click", linkClickEvent);
@@ -153,3 +130,18 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         const targetFile = e.currentTarget.getAttribute("href");
         const cleanUrl = targetFile.replace(".html", "");
+
+        history.pushState({ url: targetFile }, "", cleanUrl);
+        handleNavigation(targetFile);
+    };
+
+    initSite();
+
+    window.addEventListener("popstate", (e) => {
+        if (e.state && e.state.url) {
+            handleNavigation(e.state.url);
+        } else {
+            handleNavigation("home.html");
+        }
+    });
+});
