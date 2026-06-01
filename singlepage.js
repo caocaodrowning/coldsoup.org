@@ -4,6 +4,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const DEFAULT_TRACK = "/assets/audio/i-was-a-prisoner-in-your-site.mp3";
 
     const pageCache = {};
+    const imageCache = new Set();
+
+    const preloadImages = (htmlString) => {
+
+        const parser = new DOMParser();
+
+        const doc = parser.parseFromString(htmlString, "text/html");
+    
+
+        doc.querySelectorAll("img").forEach((img) => {
+
+            const src = img.getAttribute("src");
+        
+            if (src && !imageCache.has(src)) {
+                imageCache.add(src);
+                const imgObject = new Image(); 
+                imgObject.src = src;
+                console.log(`we done got: ${src}`);
+            }
+        });
+    };
 
     const getCleanName = (path) => {
         const file = path.split("/").pop() || "";
@@ -43,24 +64,26 @@ const initSite = async () => {
         prefetchPages(); 
     };
 
-    const prefetchPages = () => {
-        document.querySelectorAll(".nav-link").forEach(async (link) => {
-            const fileUrl = link.getAttribute("href");
-            
-            if (!fileUrl || fileUrl.startsWith("http") || pageCache[fileUrl]) return;
+const prefetchPages = () => {
+    document.querySelectorAll(".nav-link").forEach(async (link) => {
+        const fileUrl = link.getAttribute("href");
+        
+        if (!fileUrl || fileUrl.startsWith("http") || pageCache[fileUrl]) return;
 
-            try {
-                const response = await fetch(fileUrl);
-                if (response.ok) {
-                    const htmlText = await response.text();
-                    pageCache[fileUrl] = htmlText;
-                    console.log(`fetched and cached: ${fileUrl}`);
-                }
-            } catch (err) {
-                console.log(`failed to fetch ${fileUrl}:`, err);
+        try {
+            const response = await fetch(fileUrl);
+            if (response.ok) {
+                const htmlText = await response.text();
+                pageCache[fileUrl] = htmlText;
+                console.log(`we done got: ${fileUrl}`);
+                
+                preloadImages(htmlText); 
             }
-        });
-    };
+        } catch (err) {
+            console.log(`we did not get ${fileUrl}:`, err);
+        }
+    });
+};
 
     document.addEventListener("click", (e) => {
         const enterBtn = e.target.closest("#enter-btn");
