@@ -18,7 +18,7 @@ const initSite = async () => {
         const isReal404Page = activeContainer && activeContainer.getAttribute("data-track") === "/assets/audio/lily.mp3";
 
         if (isReal404Page) {
-            console.log("Real 404 error detected via server layout. Halting silent navigation boot.");
+            console.log("bruh");
             manageAudioTracks();
             
             syncStylesToBody(); 
@@ -54,10 +54,10 @@ const initSite = async () => {
                 if (response.ok) {
                     const htmlText = await response.text();
                     pageCache[fileUrl] = htmlText;
-                    console.log(`Prefetched and cached: ${fileUrl}`);
+                    console.log(`fetched and cached: ${fileUrl}`);
                 }
             } catch (err) {
-                console.log(`Failed to prefetch ${fileUrl} in advance:`, err);
+                console.log(`failed to fetch ${fileUrl}:`, err);
             }
         });
     };
@@ -96,11 +96,11 @@ const initSite = async () => {
             bgAudio.load();
 
             if (!document.getElementById("intro-overlay")) {
-                bgAudio.play().catch(err => console.log("Audio play blocked/delayed:", err));
+                bgAudio.play().catch(err => console.log("audio play blocked:", err));
             }
         } else {
             if (!document.getElementById("intro-overlay") && bgAudio.paused) {
-                bgAudio.play().catch(err => console.log("Audio play blocked/delayed:", err));
+                bgAudio.play().catch(err => console.log("audio play blocked:", err));
             }
         }
     };
@@ -137,7 +137,7 @@ const initSite = async () => {
             } else {
                 const response = await fetch(fileUrl);
                 if (!response.ok) {
-                    console.warn("Target page not found. Rerouting inner shell to 404 layout.");
+                    console.warn("not a real country");
                     await handleNavigation("/404.html");
                     return;
                 }
@@ -173,7 +173,7 @@ const initSite = async () => {
                 prefetchPages();
             }
         } catch (error) {
-            console.error("Router error handling navigation:", error);
+            console.error("bruh:", error);
             
             const currentClean = getCleanName(window.location.pathname);
             const targetClean = getCleanName(fileUrl);
