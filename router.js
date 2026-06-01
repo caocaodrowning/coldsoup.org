@@ -46,19 +46,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- 2. AUTOMATED BACKGROUND PREFETCHER ---
     const prefetchPages = () => {
-        // Find all links on the page that point to internal subpages
         document.querySelectorAll(".nav-link").forEach(async (link) => {
             const fileUrl = link.getAttribute("href");
             
-            // Skip broken links or pages we've already cached
             if (!fileUrl || fileUrl.startsWith("http") || pageCache[fileUrl]) return;
 
             try {
-                // Silently fetch the file contents in the background
                 const response = await fetch(fileUrl);
                 if (response.ok) {
                     const htmlText = await response.text();
-                    // Store the raw HTML text string safely in our cache vault
                     pageCache[fileUrl] = htmlText;
                     console.log(`Prefetched and cached: ${fileUrl}`);
                 }
@@ -137,11 +133,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let htmlText = "";
 
-            // MODIFIED: If the file is already sitting in our cache vault, use it instantly!
             if (pageCache[fileUrl]) {
                 htmlText = pageCache[fileUrl];
             } else {
-                // Otherwise, perform a standard live network request fallback
                 const response = await fetch(fileUrl);
                 if (!response.ok) {
                     console.warn("Target page not found. Rerouting inner shell to 404 layout.");
@@ -177,7 +171,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 manageAudioTracks();
                 bindLinks();
                 
-                // Scan the newly loaded page and prefetch any new internal links found
                 prefetchPages();
             }
         } catch (error) {
@@ -210,6 +203,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initSite();
 
-    // --- 8. BROWSER BUTTON EVENT BINDING ---
+    // --- 8. BROWSER BUTTON EVENT BINDING (FIXED CLOSING SYNTAX SURGICALLY) ---
     window.addEventListener("popstate", (e) => {
-        if (e
+        if (e.state && e.state.url) {
+            handleNavigation(e.state.url);
+        } else {
+            const cleanFile = getCleanName(window.location.pathname);
+            if (cleanFile && cleanFile !== "home") {
+                handleNavigation(cleanFile + ".html");
+            } else {
+                handleNavigation("home.html");
+            }
+        }
+    });
+});
