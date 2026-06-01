@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    // --- 3. GLOBAL ENTER SITE OVERLAY TRIGGER ---
     document.addEventListener("click", (e) => {
         const enterBtn = e.target.closest("#enter-btn");
         const overlay = document.getElementById("intro-overlay");
@@ -73,12 +72,15 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault(); 
 
             overlay.style.opacity = "0";
-            document.body.classList.add("animation-running");
+
+            setTimeout(() => {
+                document.body.classList.add("animation-running");
+                syncStylesToBody(); 
+            }, 300);
 
             setTimeout(() => {
                 overlay.remove();
                 manageAudioTracks();
-                syncStylesToBody();
             }, 500);
         }
     });

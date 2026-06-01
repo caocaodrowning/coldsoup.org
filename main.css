@@ -92,11 +92,16 @@ body {
     z-index: 9999;
 }
 
-/* Keep your custom background active class matching the tile grid configuration */
+/* This class will now wait to activate until your 300ms delay timer fires */
 body.custom-bg-active {
     background-image: var(--bg-image) !important;
     background-size: var(--bg-size, 200px 200px) !important; 
-    animation: stack-scroll 8s linear infinite !important;
+    animation: custom-stack-scroll 8s linear infinite !important;
+    animation-play-state: paused !important; /* Stays paused until animation-running is added */
+}
+
+body.custom-bg-active.animation-running {
+    animation-play-state: running !important;
 }
 
     body {
@@ -124,6 +129,16 @@ body.custom-bg-active {
     }
     100% {
         background-position: 140px 20px, 0px 0px, 0px 0px;
+    }
+}
+
+/* ADD THIS NEW BLOCK TO MAIN.CSS */
+@keyframes custom-stack-scroll {
+    0% {
+            background-position: 140px 20px;
+    }
+    100% {
+            background-position: 840px 820px;
     }
 }
 
