@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const DEFAULT_TRACK = "/assets/audio/i-was-a-prisoner-in-your-site.mp3";
 
+    // This object acts as a local storage vault to hold your page HTML in advance
+    const pageCache = {};
+
     // Helper to safely clean up file extensions for comparison
     const getCleanName = (path) => {
         const file = path.split("/").pop() || "";
@@ -17,12 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const activeContainer = document.getElementById("container");
         const isReal404Page = activeContainer && activeContainer.getAttribute("data-track") === "/assets/audio/lily.mp3";
 
-        // If the server served our 404 page due to a broken URL, sync immediately
         if (isReal404Page) {
             console.log("Real 404 error detected via server layout. Halting silent navigation boot.");
             manageAudioTracks();
             syncStylesToBody();
             bindLinks(); 
+            prefetchPages(); // Still prefetch links from 404 page!
             return;
         }
 
@@ -38,9 +41,34 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         manageAudioTracks();
+        prefetchPages(); // Kick off the background downloader!
     };
 
-    // --- 2. GLOBAL ENTER SITE OVERLAY TRIGGER ---
+    // --- 2. AUTOMATED BACKGROUND PREFETCHER ---
+    const prefetchPages = () => {
+        // Find all links on the page that point to internal subpages
+        document.querySelectorAll(".nav-link").forEach(async (link) => {
+            const fileUrl = link.getAttribute("href");
+            
+            // Skip broken links or pages we've already cached
+            if (!fileUrl || fileUrl.startsWith("http") || pageCache[fileUrl]) return;
+
+            try {
+                // Silently fetch the file contents in the background
+                const response = await fetch(fileUrl);
+                if (response.ok) {
+                    const htmlText = await response.text();
+                    // Store the raw HTML text string safely in our cache vault
+                    pageCache[fileUrl] = htmlText;
+                    console.log(`Prefetched and cached: ${fileUrl}`);
+                }
+            } catch (err) {
+                console.log(`Failed to prefetch ${fileUrl} in advance:`, err);
+            }
+        });
+    };
+
+    // --- 3. GLOBAL ENTER SITE OVERLAY TRIGGER ---
     document.addEventListener("click", (e) => {
         const enterBtn = e.target.closest("#enter-btn");
         const overlay = document.getElementById("intro-overlay");
@@ -59,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // --- 3. DYNAMIC MUSIC TRACK MANAGER ---
+    // --- 4. DYNAMIC MUSIC TRACK MANAGER ---
     const manageAudioTracks = () => {
         const activeContainer = document.getElementById("container");
         if (!activeContainer) return;
@@ -82,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // --- 4. BODY STYLE SYNCHRONIZER ---
+    // --- 5. BODY STYLE SYNCHRONIZER ---
     const syncStylesToBody = () => {
         const activeContainer = document.getElementById("container");
 
@@ -102,21 +130,26 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // --- 5. CONTAINER ROUTER ENGINE ---
+    // --- 6. CONTAINER ROUTER ENGINE ---
     const handleNavigation = async (fileUrl) => {
         try {
             if (!fileUrl || fileUrl === ".html") return;
 
-            const response = await fetch(fileUrl);
-            
-            // FIXED: If the file does not exist, manually reroute the SPA to load 404.html layouts smoothly
-            if (!response.ok) {
-                console.warn("Target page not found. Rerouting inner shell to 404 layout.");
-                await handleNavigation("/404.html");
-                return;
-            }
+            let htmlText = "";
 
-            const htmlText = await response.text();
+            // MODIFIED: If the file is already sitting in our cache vault, use it instantly!
+            if (pageCache[fileUrl]) {
+                htmlText = pageCache[fileUrl];
+            } else {
+                // Otherwise, perform a standard live network request fallback
+                const response = await fetch(fileUrl);
+                if (!response.ok) {
+                    console.warn("Target page not found. Rerouting inner shell to 404 layout.");
+                    await handleNavigation("/404.html");
+                    return;
+                }
+                htmlText = await response.text();
+            }
 
             const parser = new DOMParser();
             const doc = parser.parseFromString(htmlText, "text/html");
@@ -143,6 +176,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 syncStylesToBody();
                 manageAudioTracks();
                 bindLinks();
+                
+                // Scan the newly loaded page and prefetch any new internal links found
+                prefetchPages();
             }
         } catch (error) {
             console.error("Router error handling navigation:", error);
@@ -155,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // --- 6. NAVIGATION LINK EVENT BINDERS ---
+    // --- 7. NAVIGATION LINK EVENT BINDERS ---
     const bindLinks = () => {
         document.querySelectorAll(".nav-link").forEach(link => {
             link.removeEventListener("click", linkClickEvent);
@@ -174,17 +210,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initSite();
 
-    // --- 7. BROWSER BUTTON EVENT BINDING ---
+    // --- 8. BROWSER BUTTON EVENT BINDING ---
     window.addEventListener("popstate", (e) => {
-        if (e.state && e.state.url) {
-            handleNavigation(e.state.url);
-        } else {
-            const cleanFile = getCleanName(window.location.pathname);
-            if (cleanFile && cleanFile !== "home") {
-                handleNavigation(cleanFile + ".html");
-            } else {
-                handleNavigation("home.html");
-            }
-        }
-    });
-});
+        if (e
