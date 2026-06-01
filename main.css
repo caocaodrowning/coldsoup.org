@@ -43,38 +43,67 @@
         --content: #000000;
     }
 
-    body {
-        font-family: 'pgothic';
-        margin: 0;
-        padding-bottom: 10%;
+body {
+    font-family: 'pgothic';
+    margin: 0;
+    padding-bottom: 10%;
 
-        background-image:
-            var(--bg-image),
-            var(--bg-image),
-            url('/assets/bg.gif');
+    background-image: var(--bg-image, 
+        url('/assets/yukabg.png'), 
+        url('/assets/yukabg2.png'), 
+        url('/assets/bg.gif')
+    );
 
-        background-color: rgb(30, 0, 0);
-        background-blend-mode: screen;
-        background-size: 100px 100px, 100px 100px, 150px 150px;
+    background-color: rgb(30, 0, 0);
+    background-blend-mode: screen;
 
-        animation: stack-scroll 8s linear infinite;
+    /* FIXED: If a custom background image is active, default its size layout to a clean 200px pattern tile */
+    background-size: var(--bg-size, 100px 100px, 100px 100px, 150px 150px);
 
+    animation: stack-scroll 8s linear infinite;
+    color: var(--text-color);
+}
 
-        color: var(--text-color);
-    }
+#intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    /* FIXED: Uses your static image variable here while in the overlay, 
+       falling back to standard layout frames if loading the home page screen */
+    background-image: var(--bg-image-static, 
+        url('/assets/yukabg.png'),
+        url('/assets/yukabg2.png'),
+        url('/assets/bg.gif')
+    );
+
+    background-color: rgba(31, 10, 10, 0.533);
+    background-blend-mode: screen;
+    background-color: rgb(30, 0, 0);
+
+    background-size: var(--bg-size, 100px 100px, 100px 100px, 150px 150px);
+
+    animation: chill 8s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Keep your custom background active class matching the tile grid configuration */
+body.custom-bg-active {
+    background-image: var(--bg-image) !important;
+    background-size: var(--bg-size, 200px 200px) !important; 
+    animation: stack-scroll 8s linear infinite !important;
+}
 
     body {
         animation-play-state: paused;
     }
 
     body.animation-running {
-        animation-play-state: running !important;
-    }
-
-    body.custom-bg-active {
-        background-image: var(--bg-image) !important;
-        background-size: 200px 200px !important; 
-        animation: stack-scroll 8s linear infinite !important;
         animation-play-state: running !important;
     }
 
@@ -88,53 +117,15 @@
         }
     }
 
-    @keyframes chill {
-        0% {
-            background-position: 140px 20px, 0px 0px, 0px 0px;
-        }
-
-        100% {
-            background-position: 140px 20px, 0px 0px, 0px 0px;
-        }
+@keyframes chill {
+    0% {
+        /* FIXED: Keeps all 3 structural design layers aligned with frame zero of stack-scroll */
+        background-position: 140px 20px, 0px 0px, 0px 0px;
     }
-
-    #intro-overlay {
-        position: fixed;
-
-        top: 0;
-
-        left: 0;
-
-        width: 100vw;
-
-        height: 100vh;
-
-        background-image:
-            var(--bg-image),
-            var(--bg-image),
-            url('/assets/bg.gif');
-
-        background-color: rgba(31, 10, 10, 0.533);
-
-        background-blend-mode: screen;
-
-        background-color: rgb(30, 0, 0);
-
-        background-size:
-            100px 100px,
-            100px 100px,
-            150px 150px;
-
-        animation: chill 8s linear infinite;
-
-        display: flex;
-
-        justify-content: center;
-
-        align-items: center;
-
-        z-index: 9999;
+    100% {
+        background-position: 140px 20px, 0px 0px, 0px 0px;
     }
+}
 
 
     #enter-btn {
@@ -476,7 +467,7 @@
 
         background-color: var(--main-color);
 
-        padding: 10px;
+        padding: 0px;
 
         padding-top: 15px;
 
