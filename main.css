@@ -73,14 +73,9 @@
 
     body.custom-bg-active {
         background-image: var(--bg-image) !important;
-        background-size: cover !important;
-        animation: none !important;
-    }
-
-    body.custom-bg-active {
-        background-image: var(--bg-image) !important;
-        background-size: cover !important;
-        animation: none !important;
+        background-size: 200px 200px !important; 
+        animation: stack-scroll 8s linear infinite !important;
+        animation-play-state: running !important;
     }
 
     @keyframes stack-scroll {
