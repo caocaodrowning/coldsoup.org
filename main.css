@@ -1,6 +1,6 @@
     @font-face {
         font-family: "pgothic";
-        
+
         src: url("assets/fonts/ms-pgothic-regular.woff") format("woff");
 
         font-weight: normal;
@@ -45,39 +45,117 @@
 
     body {
         font-family: 'pgothic';
-
         margin: 0;
+        padding-bottom: 10%;
 
-        background-image: 
-        url('/assets/yukabg.png'),
-        url('/assets/yukabg2.png'),
-        url('/assets/bg.gif');
+        background-image:
+            var(--bg-image),
+            var(--bg-image),
+            url('/assets/bg.gif');
+
+        background-color: rgb(30, 0, 0);
+        background-blend-mode: screen;
+        background-size: 100px 100px, 100px 100px, 150px 150px;
+
+        animation: stack-scroll 8s linear infinite;
+
+
+        color: var(--text-color);
+    }
+
+    body {
+        animation-play-state: paused;
+    }
+
+    body.animation-running {
+        animation-play-state: running !important;
+    }
+
+    body.custom-bg-active {
+        background-image: var(--bg-image) !important;
+        background-size: cover !important;
+        animation: none !important;
+    }
+
+    body.custom-bg-active {
+        background-image: var(--bg-image) !important;
+        background-size: cover !important;
+        animation: none !important;
+    }
+
+    @keyframes stack-scroll {
+        0% {
+            background-position: 140px 20px, 0px 0px, 0px 0px;
+        }
+
+        100% {
+            background-position: 840px 820px, 700px 700px, 150px 150px;
+        }
+    }
+
+    @keyframes chill {
+        0% {
+            background-position: 140px 20px, 0px 0px, 0px 0px;
+        }
+
+        100% {
+            background-position: 140px 20px, 0px 0px, 0px 0px;
+        }
+    }
+
+    #intro-overlay {
+        position: fixed;
+
+        top: 0;
+
+        left: 0;
+
+        width: 100vw;
+
+        height: 100vh;
+
+        background-image:
+            var(--bg-image),
+            var(--bg-image),
+            url('/assets/bg.gif');
 
         background-color: rgba(31, 10, 10, 0.533);
-        
+
         background-blend-mode: screen;
 
         background-color: rgb(30, 0, 0);
 
-        background-size: 
-        100px 100px,
-        100px 100px,
-        150px 150px;
+        background-size:
+            100px 100px,
+            100px 100px,
+            150px 150px;
 
-        animation: stack-scroll 8s linear infinite;
+        animation: chill 8s linear infinite;
 
-        color: var(--text-color);
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        z-index: 9999;
     }
-    
-    @keyframes stack-scroll {
-        0% {
-            background-position: 140px 20px, 0px 0px;
-        }
-        100% {
-            background-position: 840px 820px, 700px 700px; 
-        }
+
+
+    #enter-btn {
+        font-family: 'pgothic';
+
+        color: #282828;
+
+        font-size: 16px;
+
+        cursor: pointer;
     }
-    
+
+    #enter-btn:hover {
+        color: #262626;
+    }
+
 
     li {
         list-style-position: inside;
@@ -142,7 +220,7 @@
         font-family: 'NewsCycle-Regular';
 
         color: white;
-        
+
         text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
         font-size: 20px;
@@ -180,7 +258,7 @@
         margin-top: 30px;
 
         padding-top: 10px;
-                                                                                                                         
+
         padding-right: 0px;
 
         padding-left: 10px;
@@ -193,8 +271,7 @@
 
         background-image: url('/assets/bg.gif');
 
-        background-size: 100px 100px;   `
-
+        background-size: 100px 100px;
         background-color: rgb(0, 0, 0);
 
         background-blend-mode: difference;
@@ -282,10 +359,10 @@
         background-blend-mode: difference;
 
         background-color: var(--margin-color);
-        
+
         position: relative;
     }
-    
+
     main:before {
         content: "";
         background: none;
@@ -340,10 +417,10 @@
         background-blend-mode: difference;
 
         background-color: var(--margin-color);
-        
+
         position: relative;
     }
-    
+
     main2:before {
         content: "";
         background: black;
@@ -364,10 +441,51 @@
         width: 3px;
     }
 
+    main3 {
+        background-size: 15%;
+
+        padding: 10px;
+
+        border: 3px solid #000000;
+
+        font-size: smaller;
+
+        border-left-width: 3px;
+
+        padding-left: 10px;
+
+        padding-right: 10px;
+
+        padding-bottom: 10px;
+
+        background-image: url('/assets/bg.gif');
+
+        background-size: 100px 100px;
+
+        background-color: rgb(0, 0, 0);
+
+        background-blend-mode: difference;
+
+        background-color: var(--margin-color);
+
+        position: relative;
+    }
+
     .argh {
+
+        background-size: 100px 100px;
+
+        background-color: rgb(0, 0, 0);
+
+        background-blend-mode: difference;
+
         background-color: var(--main-color);
 
-        padding: 20px;
+        padding: 10px;
+
+        padding-top: 15px;
+
+        padding-bottom: 15px;
 
         overflow: hidden;
 
@@ -402,7 +520,15 @@
     }
 
     .argh4 {
+
+        background-size: 100px 100px;
+
+        background-color: rgb(0, 0, 0);
+
+        background-blend-mode: difference;
+
         background-color: var(--main-color);
+
 
         padding: 20px;
 
@@ -416,6 +542,13 @@
     }
 
     .argh5 {
+
+        background-size: 100px 100px;
+
+        background-color: rgb(0, 0, 0);
+
+        background-blend-mode: difference;
+
         background-color: var(--main-color);
 
         padding: 20px;
@@ -423,18 +556,46 @@
         overflow: hidden;
 
         margin-bottom: 0px;
-        
+
         flex-grow: 1;
 
         width: 800px;
 
         height: 100%;
-        
-        box-sizing:border-box;
+
+        box-sizing: border-box;
 
         max-height: inherit;
 
         border: 3px solid #000000;
+    }
+
+    .argh6 {
+        background-image: url('/assets/bg.gif');
+
+        background-size: 100px 100px;
+
+        background-color: rgb(0, 0, 0);
+
+        background-blend-mode: difference;
+
+        background-color: rgb(222, 255, 203);
+
+        padding: 10px;
+
+        padding-top: 15px;
+
+        padding-bottom: 15px;
+
+        overflow: hidden;
+
+        height: 100%;
+
+        width: 800px;
+
+        border: 3px solid #000000;
+
+        margin: 0 auto;
     }
 
     .projectHeader {
@@ -554,9 +715,23 @@
 
         border: 3px solid #000000;
 
-        margin-bottom: 10px;
+        margin-bottom: 0px;
+
+        margin-top: 0px;
+
+        padding-top: 100px;
+
+        padding-bottom: 0px;
 
         height: 100%;
+
+        display: flex;
+
+        flex-flow: column;
+
+        text-align: left;
+
+        justify-content: left;
     }
 
 
@@ -590,14 +765,16 @@
 
     .boxRight2 {
         background-image: url('https://coldsoup.org/assets/yuka.png');
-        
-        background-color: rgba(174, 255, 167, 0.5);
-        
-        background-blend-mode: lighten;
+
+        background-color: #99f8d8a4;
+
+        background-blend-mode: color-burn;
 
         background-size: 200px 200px;
 
         border: 3px solid #000000;
+
+        color: rgba(0, 0, 0, 0.733);
 
         padding: 10px;
 
