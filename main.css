@@ -43,27 +43,33 @@
         --content: #000000;
     }
 
-body {
-    font-family: 'pgothic';
-    margin: 0;
-    padding-bottom: 10%;
+    body {
+        font-family: 'pgothic';
+        margin: 0;
+        padding-bottom: 10%;
 
-    background-image: var(--bg-image, 
-        url('/assets/yukabg.png'), 
-        url('/assets/yukabg2.png'), 
-        url('/assets/bg.gif')
-    );
+        background-image:
+            var(--bg-image),
+            var(--bg-image),
+            url('/assets/bg.gif');
 
-    background-color: rgb(30, 0, 0);
-    background-blend-mode: screen;
+        background-color: rgb(30, 0, 0);
+        background-blend-mode: screen;
+        background-size: 100px 100px, 100px 100px, 150px 150px;
 
-    /* FIXED: If a custom background image is active, default its size layout to a clean 200px pattern tile */
-    background-size: var(--bg-size, 100px 100px, 100px 100px, 150px 150px);
+        animation: stack-scroll 8s linear infinite;
 
-    animation: stack-scroll 8s linear infinite;
-    color: var(--text-color);
-    animation-play-state: paused;
-}
+
+        color: var(--text-color);
+    }
+
+    body {
+        animation-play-state: paused;
+    }
+
+    body.animation-running {
+        animation-play-state: running !important;
+    }
 
 #intro-overlay {
     position: fixed;
@@ -105,23 +111,8 @@ body.custom-bg-active.animation-running {
     animation-play-state: running !important;
 }
 
-    body.animation-running {
-        animation-play-state: running !important;
-    }
-
-    @keyframes stack-scroll {
-        0% {
-            background-position: 140px 20px, 0px 0px, 0px 0px;
-        }
-
-        100% {
-            background-position: 840px 820px, 700px 700px, 150px 150px;
-        }
-    }
-
 @keyframes chill {
     0% {
-        /* FIXED: Keeps all 3 structural design layers aligned with frame zero of stack-scroll */
         background-position: 140px 20px, 0px 0px, 0px 0px;
     }
     100% {
@@ -129,13 +120,20 @@ body.custom-bg-active.animation-running {
     }
 }
 
-/* ADD THIS NEW BLOCK TO MAIN.CSS */
+    @keyframes stack-scroll {
+        0% {
+            background-position: 140px 20px, 0px 0px, 0px 0px;
+        }
+        100% {
+            background-position: 840px 820px, 700px 700px, 0px 0px;
+        }
+    }
+
 @keyframes custom-stack-scroll {
     0% {
             background-position: 140px 20px, 0px 0px, 0px 0px;
-        }
-
-        100% {
+    }
+    100% {
             background-position: 840px 820px, 700px 700px, 150px 150px;
     }
 }

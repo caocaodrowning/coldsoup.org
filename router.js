@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isReal404Page) {
             console.log("Real 404 error detected via server layout. Halting silent navigation boot.");
             manageAudioTracks();
-            syncStylesToBody();
+            // We do NOT call syncStylesToBody() here so the body stays clean while overlay is up
             bindLinks(); 
-            prefetchPages(); // Still prefetch links from 404 page!
+            prefetchPages(); 
             return;
         }
 
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         manageAudioTracks();
-        prefetchPages(); // Kick off the background downloader!
+        prefetchPages(); 
     };
 
     // --- 2. AUTOMATED BACKGROUND PREFETCHER ---
@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
+    // --- 3. GLOBAL ENTER SITE OVERLAY TRIGGER ---
     document.addEventListener("click", (e) => {
         const enterBtn = e.target.closest("#enter-btn");
         const overlay = document.getElementById("intro-overlay");
@@ -71,13 +72,16 @@ document.addEventListener("DOMContentLoaded", () => {
         if (enterBtn && overlay) {
             e.preventDefault(); 
 
+            // 1. Immediately start fading out the overlay text block element
             overlay.style.opacity = "0";
 
+            // 2. TIMEOUT DELAY: Wait 300ms for overlay to dim, then swap to live animated backgrounds
             setTimeout(() => {
                 document.body.classList.add("animation-running");
                 syncStylesToBody(); 
-            }, 300);
+            }, 300); 
 
+            // 3. Clean up the overlay DOM node permanently after transition complete
             setTimeout(() => {
                 overlay.remove();
                 manageAudioTracks();
@@ -108,13 +112,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // --- 5. BODY STYLE SYNCHRONIZER ---
+// --- 5. BODY STYLE SYNCHRONIZER ---
     const syncStylesToBody = () => {
         const activeContainer = document.getElementById("container");
 
         if (activeContainer && activeContainer.hasAttribute("style")) {
             const styleAttr = activeContainer.getAttribute("style");
-
             document.body.setAttribute("style", styleAttr);
 
             if (styleAttr.includes("--bg-image")) {
@@ -123,8 +126,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.body.classList.remove("custom-bg-active");
             }
         } else {
-            document.body.removeAttribute("style");
             document.body.classList.remove("custom-bg-active");
+            
+            document.body.style.removeProperty("--bg-image");
+            document.body.style.removeProperty("--bg-size");
+            document.body.style.removeProperty("--bg-position-start");
+            // CLEANED: Removed the style cleanup for the static property layer
         }
     };
 
@@ -205,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initSite();
 
-    // --- 8. BROWSER BUTTON EVENT BINDING (FIXED CLOSING SYNTAX SURGICALLY) ---
+    // --- 8. BROWSER BUTTON EVENT BINDING ---
     window.addEventListener("popstate", (e) => {
         if (e.state && e.state.url) {
             handleNavigation(e.state.url);
