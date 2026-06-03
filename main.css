@@ -58,15 +58,13 @@
         left: 0;
         width: 100vw;
         height: 100vh;
+        padding-top: 200px;
         background-image: var(--bg-image);
         background-color: rgba(31, 10, 10, 0.533);
         background-blend-mode: screen;
         background-color: rgb(30, 0, 0);
         background-size: var(--bg-size, 100px 100px, 100px 100px, 150px 150px);
         animation: chill 8s linear infinite;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         z-index: 9999;
     }
 
@@ -189,7 +187,8 @@
         background-size: 230%;
         display: flex;
         flex-direction: column;
-        width: 215px;
+        min-width: 215px;
+        max-width: 215px;
         border: 3px solid #000000;
         margin-top: 30px;
         padding-top: 10px;
@@ -209,7 +208,7 @@
         background-size: 15%;
         display: flex;
         flex-direction: column;
-        width: 230px;
+        width: 218px;
         border: 3px solid #000000;
         margin-top: 30px;
         padding: 10px;
@@ -223,21 +222,9 @@
         background-color: var(--margin-color);
     }
 
-    .aside3 {
-        background-size: 15%;
-        display: flex;
-        flex-direction: column;
-        width: 230px;
-        min-width: 214px;
-        border: none;
-        padding: 10px;
-        padding-bottom: 10px;
-        border-left-width: 0px;
-        background-color: none;
-    }
-
     main {
         background-size: 15%;
+        width: 826px;
         padding: 10px;
         border: 3px solid #000000;
         font-size: smaller;
@@ -276,10 +263,10 @@
 
     main2 {
         background-size: 15%;
+        width: 826px;
         padding: 10px;
         display: flex;
         flex-direction: column;
-        width: 100%;
         border: 3px solid #000000;
         font-size: smaller;
         border-left-width: 0px;
@@ -317,6 +304,7 @@
 
     main3 {
         background-size: 15%;
+        width: 826px;
         padding: 10px;
         border: 3px solid #000000;
         font-size: smaller;
@@ -348,6 +336,8 @@
     }
 
     .argh2 {
+        display: flex;
+        justify-content: center;
         padding: 15px;
         overflow: hidden;
         padding-left: 90px;
@@ -362,6 +352,8 @@
     }
 
     .argh4 {
+        display: flex;
+        justify-content: center;
         background-size: 100px 100px;
         background-color: rgb(0, 0, 0);
         background-blend-mode: difference;
@@ -374,6 +366,9 @@
     }
 
     .argh5 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         background-size: 100px 100px;
         background-color: rgb(0, 0, 0);
         background-blend-mode: difference;
@@ -381,11 +376,8 @@
         padding: 20px;
         overflow: hidden;
         margin-bottom: 0px;
-        flex-grow: 1;
         width: 800px;
         height: 100%;
-        box-sizing: border-box;
-        max-height: inherit;
         border: 3px solid #000000;
     }
 
