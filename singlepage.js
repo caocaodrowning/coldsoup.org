@@ -50,8 +50,8 @@ const initSite = async () => {
         }
 
         if (path.endsWith("index.html") || path === "/" || path === "" || cleanFile === "index") {
-            await handleNavigation("home.html");
-            history.replaceState({ url: "home.html" }, "", "home");
+            await handleNavigation("root.html");
+            history.replaceState({ url: "root.html" }, "", "root");
         } else {
             if (path.endsWith(".html")) {
                 await handleNavigation(cleanFile + ".html");
@@ -229,10 +229,10 @@ const prefetchPages = () => {
             handleNavigation(e.state.url);
         } else {
             const cleanFile = getCleanName(window.location.pathname);
-            if (cleanFile && cleanFile !== "home") {
+            if (cleanFile && cleanFile !== "root") {
                 handleNavigation(cleanFile + ".html");
             } else {
-                handleNavigation("home.html");
+                handleNavigation("root.html");
             }
         }
     });
