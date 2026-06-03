@@ -24,7 +24,7 @@
         --bg-image: url('/assets/yukabg.png'),
             url('/assets/yukabg2.png'),
             url('/assets/bg.gif');
-        --boxr2: url('https://coldsoup.org/assets/yuka.png');
+        --boxr2: url('/assets/yuka.png');
         --sidebar-image: ;
         --margin-color: #9181b1;
         --main-color: #2b7c3aa6;
@@ -511,7 +511,7 @@
     }
 
     .boxRight2 {
-        background-image: url('https://coldsoup.org/assets/yuka.png');
+        background-image: url('/assets/yuka.png');
         background-color: #99f8d8a4;
         background-blend-mode: color-burn;
         background-size: 200px 200px;
