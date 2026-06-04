@@ -189,6 +189,19 @@ const prefetchPages = () => {
 
                 if (doc.title) document.title = doc.title;
 
+                const oldStyle = document.getElementById("page-css");
+                if (oldStyle) oldStyle.remove();
+
+                const newStyle = doc.querySelector("style#page-css");
+                if (newStyle) {
+                    const styleTag = document.createElement("style");
+                    styleTag.id = "page-css";
+                    styleTag.innerHTML = newStyle.innerHTML;
+                    document.head.appendChild(styleTag);
+                }
+
+                syncStylesToBody();
+
                 syncStylesToBody();
                 manageAudioTracks();
                 bindLinks();
