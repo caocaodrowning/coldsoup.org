@@ -176,6 +176,15 @@
     #navbar li a:hover {
         color: #a49cba;
     }
+    
+    .poster {
+   
+        height: 120px;
+        width: 90px;
+        display: inline-block;
+        border: black solid 3px;
+        opacity: 75%;
+    }
 
     #flex {
         background-size: 15%;
