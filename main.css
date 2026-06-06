@@ -139,7 +139,7 @@
     #header {
         width: 100%;
         background-color: none;
-        height: 150px;
+        height: 10x;
         background-image: var(--header-image);
         background-size: 100%;
     }
@@ -351,6 +351,51 @@
         position: relative;
     }
 
+    .column-scroll { /* edit shit, what about columns ? */
+        max-width: 100%;
+        padding-right: .4rem;
+        padding-left: .4rem;
+        width: 100%;
+        /* margin-top: .25rem; only necessary when not on top*/
+        display: -ms-flexbox;
+        display: flex;
+        overflow: clip; /* hidden, maybe */
+        
+    }
+
+    .text-scroll {
+        animation: marquee-1 6s linear infinite;
+        color: #fff;
+    }
+
+    .text-scrollR {
+        animation: marquee-1 6s linear infinite;
+        animation-direction: reverse;
+        color: #fff;
+    }
+
+    .text-scrollV {
+        animation: marquee-2 0.2s linear infinite;
+        color: #fff;
+    }
+
+    .text-scrollSTILL {
+        animation: marquee-2 0.2s linear infinite;
+        color: #fff;
+    }
+
+    @keyframes marquee-1 {
+        to {
+            transform: translateX(-50%) /*-50% */
+        }
+    }
+
+    @keyframes marquee-2 {
+        to {
+            transform: translateY(-100%) /*-50% */
+        }
+    }
+
     .argh {
         background-size: 100px 100px;
         background-color: rgb(0, 0, 0);
@@ -460,12 +505,17 @@
     }
 
     footer {
+        text-shadow: black 1px;
         padding: 1px;
         padding-right: 130px;
         font-size: 13px;
         color: #ffffff;
         width: 100%;
         text-align: right;
+    }
+
+    footer.a {
+        text-shadow: black 1px;
     }
 
 
