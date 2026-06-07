@@ -139,7 +139,7 @@
     #header {
         width: 100%;
         background-color: none;
-        height: 10x;
+        height: 50px;
         background-image: var(--header-image);
         background-size: 100%;
     }
@@ -251,11 +251,12 @@
         background-color: rgb(0, 0, 0);
         background-blend-mode: difference;
         background-color: var(--margin-color);
+        line-height: 13px;
     }
 
     main {
         background-size: 15%;
-        width: 826px;
+        width: 822px;
         padding: 10px;
         border: 3px solid #000000;
         font-size: smaller;
@@ -294,7 +295,7 @@
 
     main2 {
         background-size: 15%;
-        width: 826px;
+        width: 820px;
         padding: 10px;
         border: 3px solid #000000;
         font-size: smaller;
@@ -349,23 +350,24 @@
         background-blend-mode: difference;
         background-color: var(--margin-color);
         position: relative;
+        line-height: 13px;
     }
 
     .column-scroll { /* edit shit, what about columns ? */
         max-width: 100%;
-        padding-right: .4rem;
-        padding-left: .4rem;
         width: 100%;
         /* margin-top: .25rem; only necessary when not on top*/
         display: -ms-flexbox;
         display: flex;
         overflow: clip; /* hidden, maybe */
+        line-height: 13px;
         
     }
 
     .text-scroll {
         animation: marquee-1 6s linear infinite;
         color: #fff;
+        line-height: 13px;
     }
 
     .text-scrollR {
@@ -404,7 +406,6 @@
         padding: 0px;
         padding-top: 15px;
         padding-bottom: 15px;
-        overflow: hidden;
         height: 100%;
         width: 800px;
         border: 3px solid #000000;
@@ -413,14 +414,12 @@
 
     .argh2 {
         padding: 15px;
-        overflow: hidden;
         padding-left: 90px;
         padding-right: 90px;
     }
 
     .argh3 {
         padding: 110px;
-        overflow: hidden;
         padding-top: 20px;
         padding-bottom: 20px;
     }
@@ -433,7 +432,6 @@
         background-blend-mode: difference;
         background-color: var(--main-color);
         padding: 20px;
-        overflow: hidden;
         margin-bottom: 10px;
         width: 800px;
         border: 3px solid #000000;
@@ -493,6 +491,7 @@
     #leftSidebar {
         order: 1;
         position: relative;
+        flex: 0 0 215px;
     }
 
     #mainSection {
@@ -502,10 +501,11 @@
     #rightSidebar {
         order: 3;
         position: relative;
+        flex: 0 0 215px;
     }
 
     footer {
-        text-shadow: black 1px;
+        text-shadow: 1px 1px #000000;
         padding: 1px;
         padding-right: 130px;
         font-size: 13px;
@@ -567,6 +567,21 @@
         flex-flow: column;
         text-align: left;
         justify-content: left;
+        line-height: 13px;
+    }
+
+    .boxRight {
+        background-color: var(--main-color);
+        border: 3px solid #000000;
+        padding: 10px;
+        line-height: 13px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-flow: column;
+        text-align: left;
+        justify-content: left;
     }
 
 
@@ -577,15 +592,7 @@
         margin-bottom: 10px;
         align-items: center;
         justify-content: center;
-    }
-
-    .boxRight {
-        background-color: var(--main-color);
-        border: 3px solid #000000;
-        padding: 10px;
-        margin-bottom: 10px;
-        align-items: center;
-        justify-content: center;
+        line-height: 13px;
     }
 
     .boxRight2 {
@@ -608,6 +615,15 @@
         border-bottom: 3px solid #000000;
         color: black;
         overflow: hidden;
+        max-width: 1300px;
+    }
+
+    .text-scroll span, 
+    .text-scrollR span, 
+    .text-scrollV span, 
+    .text-scrollSTILL span {
+        line-height: 13px;
+        margin-bottom: 0; 
     }
 
     .boxRightGallery {
@@ -637,8 +653,7 @@
     .button {
         background-color: var(--main-color);
         border: 3px solid #000000;
-        padding: 6px;
-        padding-top: 8px;
+        padding: 7px;;
         margin-bottom: 10px;
     }
 
