@@ -650,9 +650,9 @@
     
     .boxVideo {
         background-image: url('/assets/video.png');
-        background-color: #a5cf0f8c;
+        background-color: #0fa9cf8c;
         background-blend-mode: color-burn;
-        background-size: 100% 100%;rn;
+        background-size: 100% 100%;
         background-size: 100% 100%;
         border: 3px solid #000000;
         color: rgba(0, 0, 0, 0.733);
