@@ -433,8 +433,11 @@
 
     .argh2 {
         padding: 15px;
-        padding-left: 90px;
-        padding-right: 90px;
+        padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .argh3 {
@@ -445,12 +448,11 @@
 
     .argh4 {
         display: flex;
-        justify-content: center;
         background-size: 100px 100px;
         background-color: rgb(0, 0, 0);
         background-blend-mode: difference;
         background-color: var(--main-color);
-        padding: 20px;
+        padding: 15px;
         margin-bottom: 10px;
         width: 800px;
         border: 3px solid #000000;
@@ -461,9 +463,8 @@
         background-color: rgb(0, 0, 0);
         background-blend-mode: difference;
         background-color: var(--main-color);
-        padding: 20px;
+        padding: 15px;
         overflow: hidden;
-        padding-bottom: 0px;
         height: 100%;
         display: flex;
         flex-flow: column;
@@ -599,11 +600,22 @@
         line-height: 13px;
     }
 
+
+    .boxinside {
+        border: 3px solid #000000;
+        padding: 12px;
+        margin-bottom: 10px;
+        align-items: center;
+        justify-content: center;
+        line-height: 13px;
+        height: 10px;
+    }
+
     .boxRight2 {
         background-image: url('/assets/yuka.png');
-        background-color: #99f8d8a4;
+        background-color: #99f8d81f;
         background-blend-mode: color-burn;
-        background-size: 200px 200px;
+        background-size: 100% 200px;
         border: 3px solid #000000;
         color: rgba(0, 0, 0, 0.733);
         padding: 10px;
@@ -612,6 +624,91 @@
         align-items: center;
         justify-content: center;
 
+    }
+    
+    .boxCarp {
+        background-image: url('/assets/carp.jpg');
+        background-color: #a5cf0f8c;
+        background-blend-mode: color-burn;
+        background-size: 100% 100%;
+        border: 3px solid #000000;
+        color: rgba(0, 0, 0, 0.733);
+        padding: 5px;
+        height: 200px;
+        width: 300px;
+        margin-right: 20px;
+        align-items: center;
+        justify-content: center;
+
+    }
+    
+    .boxCarp:hover {
+        background-color: #cf0f498c;
+        border: 3px solid #110500;;
+        cursor: pointer;
+    }
+    
+    .boxVideo {
+        background-image: url('/assets/video.png');
+        background-color: #a5cf0f8c;
+        background-blend-mode: color-burn;
+        background-size: 100% 100%;rn;
+        background-size: 100% 100%;
+        border: 3px solid #000000;
+        color: rgba(0, 0, 0, 0.733);
+        padding: 5px;
+        height: 200px;
+        width: 170px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .boxCarp:hover {
+        background-color: #cf0f498c;
+        border: 3px solid #110500;;
+        cursor: pointer;
+    }
+    
+    .boxCaocao {
+        background-image: url('/assets/caocaodrowning.jpg');
+        background-color: #a5cf0fb7;
+        background-blend-mode: color-burn;
+        background-size: cover;
+        border: 3px solid #000000;
+        color: rgba(0, 0, 0, 0.733);
+        padding: 10px;
+        height: 200px;
+        width: 250px;
+        align-items: center;
+        justify-content: center;
+
+    }
+    
+    .boxCaocao:hover {
+        background-color: #b10a3cb6;
+        border: 3px solid #110500;;
+        cursor: pointer;
+    }
+    
+    .boxWrite {
+        background-image: url('/assets/writing.jpg');
+        background-color: #a5cf0fb7;
+        background-blend-mode: color-burn;
+        background-size:100% 100%;
+        border: 3px solid #000000;
+        color: rgba(0, 0, 0, 0.733);
+        padding: 10px;
+        height: 330px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+
+    }
+    
+    .boxWrite:hover {
+        background-color: #b10a3cb6;
+        border: 3px solid #110500;;
+        cursor: pointer;
     }
 
     .containerbox {
