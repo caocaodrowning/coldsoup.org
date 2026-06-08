@@ -668,34 +668,3 @@
         font-size: smaller;
         background-color: #ffffff;
     }
-
-    @media only screen and (max-width: 800px) {
-        #flex {
-            flex-wrap: wrap;
-        }
-
-        aside {
-            width: 100%;
-        }
-
-        main {
-            width: 100%;
-        }
-
-        #leftSidebar {
-            order: 1;
-        }
-
-        #mainSection {
-            order: 2;
-        }
-
-        #rightSidebar {
-            order: 3;
-        }
-
-        #navbar ul {
-            flex-wrap: wrap;
-        }
-
-    }
