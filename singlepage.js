@@ -6,13 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const pageCache = {};
     const imageCache = new Set();
 
-    const preloadImages = (htmlString) => {
-
-        const parser = new DOMParser();
-
-        const doc = parser.parseFromString(htmlString, "text/html");
-    };
-
     const getCleanName = (path) => {
         const file = path.split("/").pop() || "";
         return file.replace(".html", "");
@@ -50,27 +43,6 @@ const initSite = async () => {
         manageAudioTracks();
         prefetchPages(); 
     };
-
-const prefetchPages = () => {
-    document.querySelectorAll(".nav-link").forEach(async (link) => {
-        const fileUrl = link.getAttribute("href");
-        
-        if (!fileUrl || fileUrl.startsWith("http") || pageCache[fileUrl]) return;
-
-        try {
-            const response = await fetch(fileUrl);
-            if (response.ok) {
-                const htmlText = await response.text();
-                pageCache[fileUrl] = htmlText;
-                console.log(`we done got: ${fileUrl}`);
-                
-                preloadImages(htmlText); 
-            }
-        } catch (err) {
-            console.log(`we did not get ${fileUrl}:`, err);
-        }
-    });
-};
 
     document.addEventListener("click", (e) => {
         const enterBtn = e.target.closest("#enter-btn");
