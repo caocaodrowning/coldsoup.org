@@ -11,19 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const parser = new DOMParser();
 
         const doc = parser.parseFromString(htmlString, "text/html");
-    
-
-        doc.querySelectorAll("img").forEach((img) => {
-
-            const src = img.getAttribute("src");
-        
-            if (src && !imageCache.has(src)) {
-                imageCache.add(src);
-                const imgObject = new Image(); 
-                imgObject.src = src;
-                console.log(`we done got: ${src}`);
-            }
-        });
     };
 
     const getCleanName = (path) => {
@@ -234,6 +221,56 @@ const prefetchPages = () => {
         history.pushState({ url: targetFile }, "", cleanUrl);
         handleNavigation(targetFile);
     };
+
+    const friendsList = [
+        { name: "JACKPOT !!", url: "https://www.youtube.com/@carpmachinegun" },
+        { name: "romnk", url: "https://www.youtube.com/@lonk7500" },
+        { name: "dan hibiki", url: "https://bitehand.bandcamp.com/" },
+        { name: "michigan state", url: "https://overcastharbor.bandcamp.com/" },
+        { name: "benjo", url: "https://gnarville.nekoweb.org/" },
+        { name: "john l4d2", url: "https://thereall4d2ellis.neocities.org/" },
+        { name: "big nurf", url: "https://www.youtube.com/@hurfnurf2487" },
+        { name: "THE GOAT", url: "https://www.youtube.com/@k00z3r" },
+        { name: "whensthefullversioncomingout", url: "https://www.twitch.tv/demodestroier" },
+    ];
+
+    document.addEventListener("click", (e) => {
+        if (e.target && e.target.id === "lotto-btn") {
+            
+            const btn = e.target;
+            const display = document.getElementById("lotto-display");
+            const resultContainer = document.getElementById("result-link");
+
+            if (!display || !resultContainer) return;
+
+            btn.disabled = true; 
+            resultContainer.innerHTML = ""; 
+            display.style.color = "#00ff00"; 
+            
+            let spins = 0;
+            const maxSpins = 40; 
+            let speed = 40; 
+            
+            function spin() {
+                const randomIndex = Math.floor(Math.random() * friendsList.length);
+                display.innerText = friendsList[randomIndex].name;
+                spins++;
+                
+                if (spins < maxSpins) {
+                    if (spins > 25) speed += 15;
+                    if (spins > 35) speed += 50;
+                    setTimeout(spin, speed);
+                } else {
+                    const winner = friendsList[randomIndex];
+                    display.innerText = winner.name;
+                    display.style.color = "red"; 
+                    resultContainer.innerHTML = `<a href="${winner.url}" style="color: red; text-decoration: none; border-bottom: 1px dashed red;">>>> OFF YOU GO <<<</a>`;
+                    btn.disabled = false;
+                }
+            }
+            spin();
+        }
+    });
 
     initSite();
 

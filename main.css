@@ -138,7 +138,7 @@
 
     #header {
         width: 100%;
-        background-color: none;
+        
         height: 50px;
         background-image: var(--header-image);
         background-size: 100%;
@@ -398,6 +398,25 @@
         }
     }
 
+    .bigmoney {
+        font-size: 30px;
+        text-shadow: rgb(63, 63, 63) 2px 2px;
+    }
+
+    footer {
+        text-shadow: 1px 1px #000000;
+        padding: 1px;
+        padding-right: 130px;
+        font-size: 13px;
+        color: #ffffff;
+        width: 100%;
+        text-align: right;
+    }
+
+    footer.a {
+        text-shadow: black 1px 1px;
+    }
+
     .argh {
         background-size: 100px 100px;
         background-color: rgb(0, 0, 0);
@@ -504,20 +523,6 @@
         flex: 0 0 215px;
     }
 
-    footer {
-        text-shadow: 1px 1px #000000;
-        padding: 1px;
-        padding-right: 130px;
-        font-size: 13px;
-        color: #ffffff;
-        width: 100%;
-        text-align: right;
-    }
-
-    footer.a {
-        text-shadow: black 1px;
-    }
-
 
     h1,
     h2,
@@ -535,8 +540,8 @@
 
     a:link,
     a:visited {
-        background-color: none;
-        color: none;
+        
+        
         text-align: center;
         text-decoration: none;
         display: inline-block;
