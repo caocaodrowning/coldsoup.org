@@ -28,8 +28,8 @@
         --sidebar-image: ;
         --margin-color: #9181b1;
         --main-color: #2b7c3aa6;
-        --text-color: #1d1d1d;
-        --project-color: #ffcccc;
+        --text-color: #ffffff;
+        --project-color: #ffcccc; text-shadow: black 1px 1px;
         --content: #000000;
     }
 
@@ -400,7 +400,7 @@
 
     .bigmoney {
         font-size: 30px;
-        text-shadow: rgb(63, 63, 63) 2px 2px;
+        text-shadow: #080d46 1px 1px;
     }
 
     footer {
@@ -506,7 +506,6 @@
         justify-content: center;
     }
 
-    /* FIXED SYNTAX ERRORS HERE */
     #leftSidebar {
         order: 1;
         position: relative;
