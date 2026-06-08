@@ -628,7 +628,7 @@
     
     .boxCarp {
         background-image: url('/assets/carp.jpg');
-        background-color: #a5cf0f8c;
+        background-color: #0fa9cf8c;
         background-blend-mode: color-burn;
         background-size: 100% 100%;
         border: 3px solid #000000;
@@ -643,7 +643,7 @@
     }
     
     .boxCarp:hover {
-        background-color: #cf0f498c;
+        background-color: #cf577bb6;
         border: 3px solid #110500;;
         cursor: pointer;
     }
@@ -663,15 +663,9 @@
         justify-content: center;
     }
     
-    .boxCarp:hover {
-        background-color: #cf0f498c;
-        border: 3px solid #110500;;
-        cursor: pointer;
-    }
-    
     .boxCaocao {
         background-image: url('/assets/caocaodrowning.jpg');
-        background-color: #a5cf0fb7;
+        background-color: #0fa9cf8c;
         background-blend-mode: color-burn;
         background-size: cover;
         border: 3px solid #000000;
@@ -685,14 +679,14 @@
     }
     
     .boxCaocao:hover {
-        background-color: #b10a3cb6;
+        background-color: #cf1a50b6;
         border: 3px solid #110500;;
         cursor: pointer;
     }
     
     .boxWrite {
         background-image: url('/assets/writing.jpg');
-        background-color: #a5cf0fb7;
+        background-color: #f4ff9273;
         background-blend-mode: color-burn;
         background-size:100% 100%;
         border: 3px solid #000000;
@@ -706,7 +700,7 @@
     }
     
     .boxWrite:hover {
-        background-color: #b10a3cb6;
+        background-color: #cf1a50b6;
         border: 3px solid #110500;;
         cursor: pointer;
     }
