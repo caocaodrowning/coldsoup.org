@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /assets/
+Disallow: /movies/
+
+Sitemap: https://coldsoup.org/sitemap.xml
