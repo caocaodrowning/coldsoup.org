@@ -203,6 +203,7 @@ const initSite = async () => {
         { name: "john l4d2", url: "https://thereall4d2ellis.neocities.org/" },
         { name: "big nurf", url: "https://www.youtube.com/@hurfnurf2487" },
         { name: "THE GOAT", url: "https://www.youtube.com/@k00z3r" },
+        { name: "lequing dickey mining co", url: "https://www.youtube.com/@ShitterGamingYT" },
         { name: "whensthefullversioncomingout", url: "https://www.twitch.tv/demodestroier" },
     ];
 
