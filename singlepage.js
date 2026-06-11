@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const bgAudio = document.getElementById("background");
 
-    const DEFAULT_TRACK = "/assets/audio/i-was-a-prisoner-in-your-site.mp3";
+    const DEFAULT_TRACK = "/assets/audio/swans_i_was_a_prisoner_in_your_skull_snippet.mp3";
 
     const pageCache = {};
     const imageCache = new Set();
@@ -16,7 +16,7 @@ const initSite = async () => {
         const cleanFile = getCleanName(path);
         
         const activeContainer = document.getElementById("container");
-        const isReal404Page = activeContainer && activeContainer.getAttribute("data-track") === "/assets/audio/lily.mp3";
+        const isReal404Page = activeContainer && activeContainer.getAttribute("data-track") === "/assets/audio/lily_chou_chou_detune.mp3";
 
         if (isReal404Page) {
             console.log("bruh");
