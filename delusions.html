@@ -6,12 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>quotations of coldsoup</title>
         <link href="/main.css" rel="stylesheet" type="text/css" media="all">
-        <script>
-            var audio = document.getElementById("background");
-            audio.volume = 0.2;
-        </script>
     </head>
     <body>
+        <audio loop autoplay id="background">
+           <source src="/assets/audio/lain_beauties_of_nature.mp3">
+        </audio>
         <div id="intro-overlay">
             <main3>
                 <div class="argh6" style="width: 600px; text-align: center; height: auto;">
@@ -76,7 +75,7 @@
 
     body.custom-bg-active {
         background-image: none !important;
-        background-color: #2b7c3aa6 !important;
+        background-color: #ff929273 !important;
     }
 
     body.custom-bg-active::before {
@@ -105,7 +104,7 @@
         z-index: 9999;
         
         background-image: none !important; 
-        background-color: #2b7c3aa6 !important;
+        background-color: #ff929273 !important;
     }
 
     #intro-overlay::before {
@@ -115,7 +114,7 @@
         z-index: -1;
         
         background-image: var(--bg-image);
-        background-color: #f4ff9273;
+        background-color: #ff929273;
         background-blend-mode: color-burn;
         background-size: var(--bg-size, 100px 150px);
         
