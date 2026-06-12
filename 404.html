@@ -18,7 +18,7 @@
                 </div>
             </main3>
         </div>
-        <div id="container" data-track="/assets/audio/lily_chou_chou_detune.mp3" style="--bg-position-start: 0px 0px; --bg-image: url('/assets/fallenangels.gif'); --bg-size: 200px 200px;">
+        <div id="container" data-track="/assets/audio/lily_chou_chou_detune.mp3" style="--bg-position-start: 0px 0px; --bg-image: url('/assets/fallenangels.gif'); --bg-size: 200px 200px; animation: custom-stack-scroll2;">
             <div id="header"></div>
             <nav id="navbar">
                 <ul>
@@ -67,24 +67,53 @@
         padding-bottom: 10%;
         
         background-image: url('/assets/fallenangels.gif');
-            
+        background-color: #1f0a0a88;
+        background-blend-mode: screen;
+        background-color: #1e0000;
         background-color: rgb(30, 0, 0);
         background-blend-mode: screen;
         background-size: 200px 200px;
-        animation: stack-scroll 8s linear infinite;
+        animation: custom-stack-scroll2 8s linear infinite;
         color: var(--text-color);
         animation-play-state: paused;
     }
 
-    #intro-overlay {
+    body.custom-bg-active::before {
+        content: "";
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        padding-top: 220px;
+        top: 0; left: 0; width: 100vw; height: 100vh;
+        z-index: -1;
+        background-color: #1f0a0a88;
+        background-blend-mode: screen;
+        background-color: #1e0000;
         background-image: url('/assets/fallenangels.gif');
         background-size: var(--bg-size, 200px 200px);
-        animation: chill 8s linear infinite;
+        animation: custom-stack-scroll2 8s linear infinite;
+        animation-play-state: paused;
+    }
+
+    body.custom-bg-active.animation-running::before {
+        animation-play-state: running;
+    }
+
+    #intro-overlay {
+        position: fixed;
+        top: 0; left: 0; width: 100vw; height: 100vh;
+        padding-top: 220px;
+        z-index: 9999;
+    }
+
+    #intro-overlay::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        z-index: -1;
+        background-color: #1f0a0a88;
+        background-blend-mode: screen;
+        background-color: #1e0000;
+        background-image: url('/assets/fallenangels.gif');
+        background-size: var(--bg-size, 200px 200px);
+        
+        animation: chill1 8s linear infinite;
     }
 </style>
