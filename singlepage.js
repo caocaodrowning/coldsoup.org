@@ -25,7 +25,6 @@ const initSite = async () => {
             syncStylesToBody(); 
             
             bindLinks(); 
-            prefetchPages(); 
             return;
         }
 
@@ -41,7 +40,6 @@ const initSite = async () => {
         }
 
         manageAudioTracks();
-        prefetchPages(); 
     };
 
     document.addEventListener("click", (e) => {
@@ -164,8 +162,6 @@ const initSite = async () => {
                 syncStylesToBody();
                 manageAudioTracks();
                 bindLinks();
-                
-                prefetchPages();
             }
         } catch (error) {
             console.error("bruh:", error);
