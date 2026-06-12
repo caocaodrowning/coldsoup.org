@@ -364,6 +364,18 @@
         
     }
 
+    .column-scrollV { /* edit shit, what about columns ? */
+        max-width: 100%;
+        width: 100%;
+        /* margin-top: .25rem; only necessary when not on top*/
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: column;
+        overflow: clip; /* hidden, maybe */
+        line-height: 13px;
+        
+    }
+
     .text-scroll {
         animation: marquee-1 6s linear infinite;
         color: #fff;
