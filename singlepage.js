@@ -4,14 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const DEFAULT_TRACK = "/assets/audio/swans_i_was_a_prisoner_in_your_skull_snippet.mp3";
 
     const pageCache = {};
-    const imageCache = new Set();
+    const imageCache = new Set(); // Keeping this as requested, though currently unused
 
     const getCleanName = (path) => {
         const file = path.split("/").pop() || "";
         return file.replace(".html", "");
     };
 
-const initSite = async () => {
+    const initSite = async () => {
         const path = window.location.pathname;
         const cleanFile = getCleanName(path);
         
@@ -21,9 +21,7 @@ const initSite = async () => {
         if (isReal404Page) {
             console.log("bruh");
             manageAudioTracks();
-            
             syncStylesToBody(); 
-            
             bindLinks(); 
             return;
         }
@@ -113,7 +111,7 @@ const initSite = async () => {
             let htmlText = "";
 
             if (pageCache[fileUrl]) {
-                htmlText = pageCache[fileUrl];
+                htmlText = pageCache[fileUrl]; // Loads instantly from cache if visited before
             } else {
                 const response = await fetch(fileUrl);
                 if (!response.ok) {
@@ -122,6 +120,7 @@ const initSite = async () => {
                     return;
                 }
                 htmlText = await response.text();
+                pageCache[fileUrl] = htmlText; // FIX: Actually save the fetched page to the cache!
             }
 
             const parser = new DOMParser();
@@ -157,20 +156,20 @@ const initSite = async () => {
                     document.head.appendChild(styleTag);
                 }
 
-                syncStylesToBody();
-
-                syncStylesToBody();
+                syncStylesToBody(); 
                 manageAudioTracks();
                 bindLinks();
+            } else {
+                // FIX: If the fetched page is missing #container, throw an error to force a hard reload
+                throw new Error("Missing container in target page.");
             }
         } catch (error) {
             console.error("bruh:", error);
             
-            const currentClean = getCleanName(window.location.pathname);
-            const targetClean = getCleanName(fileUrl);
-            if (currentClean !== targetClean) {
-                window.location.href = fileUrl;
-            }
+            // FIX: Removed the "currentClean !== targetClean" check. 
+            // pushState already changed the URL, so they always matched, preventing the fallback.
+            // Now, if anything fails, it safely falls back to standard browser navigation.
+            window.location.href = fileUrl;
         }
     };
 
@@ -199,7 +198,7 @@ const initSite = async () => {
         { name: "john l4d2", url: "https://thereall4d2ellis.neocities.org/" },
         { name: "big nurf", url: "https://www.youtube.com/@hurfnurf2487" },
         { name: "THE GOAT", url: "https://www.youtube.com/@k00z3r" },
-        { name: "lequing dickey mining co", url: "https://www.youtube.com/@ShitterGamingYT" },
+        { name: "lequint dickey mining co", url: "https://www.youtube.com/@ShitterGamingYT" },
         { name: "whensthefullversioncomingout", url: "https://www.twitch.tv/demodestroier" },
     ];
 
