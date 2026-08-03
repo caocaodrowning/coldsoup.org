@@ -3,9 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const DEFAULT_TRACK = "/assets/audio/swans_i_was_a_prisoner_in_your_skull_snippet.mp3";
 
-    const pageCache = {};
-    const imageCache = new Set(); // Keeping this as requested, though currently unused
-
     const getCleanName = (path) => {
         const file = path.split("/").pop() || "";
         return file.replace(".html", "");
@@ -19,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const isReal404Page = activeContainer && activeContainer.getAttribute("data-track") === "/assets/audio/lily_chou_chou_detune.mp3";
 
         if (isReal404Page) {
-            console.log("bruh");
             manageAudioTracks();
             syncStylesToBody(); 
             bindLinks(); 
@@ -108,20 +104,12 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             if (!fileUrl || fileUrl === ".html") return;
 
-            let htmlText = "";
-
-            if (pageCache[fileUrl]) {
-                htmlText = pageCache[fileUrl]; // Loads instantly from cache if visited before
-            } else {
-                const response = await fetch(fileUrl);
-                if (!response.ok) {
-                    console.warn("not a real country");
-                    await handleNavigation("/404.html");
-                    return;
-                }
-                htmlText = await response.text();
-                pageCache[fileUrl] = htmlText; // FIX: Actually save the fetched page to the cache!
+            const response = await fetch(fileUrl);
+            if (!response.ok) {
+                await handleNavigation("/404.html");
+                return;
             }
+            const htmlText = await response.text();
 
             const parser = new DOMParser();
             const doc = parser.parseFromString(htmlText, "text/html");
@@ -129,46 +117,19 @@ document.addEventListener("DOMContentLoaded", () => {
             const targetContainer = doc.getElementById("container");
 
             if (targetContainer) {
-                document.getElementById("container").innerHTML = targetContainer.innerHTML;
-
-                if (targetContainer.hasAttribute("style")) {
-                    document.getElementById("container").setAttribute("style", targetContainer.getAttribute("style"));
-                } else {
-                    document.getElementById("container").removeAttribute("style");
-                }
-
-                if (targetContainer.hasAttribute("data-track")) {
-                    document.getElementById("container").setAttribute("data-track", targetContainer.getAttribute("data-track"));
-                } else {
-                    document.getElementById("container").removeAttribute("data-track");
-                }
+                const currentContainer = document.getElementById("container");
+                currentContainer.replaceWith(targetContainer);
 
                 if (doc.title) document.title = doc.title;
-
-                const oldStyle = document.getElementById("page-css");
-                if (oldStyle) oldStyle.remove();
-
-                const newStyle = doc.querySelector("style#page-css");
-                if (newStyle) {
-                    const styleTag = document.createElement("style");
-                    styleTag.id = "page-css";
-                    styleTag.innerHTML = newStyle.innerHTML;
-                    document.head.appendChild(styleTag);
-                }
 
                 syncStylesToBody(); 
                 manageAudioTracks();
                 bindLinks();
             } else {
-                // FIX: If the fetched page is missing #container, throw an error to force a hard reload
                 throw new Error("Missing container in target page.");
             }
         } catch (error) {
-            console.error("bruh:", error);
-            
-            // FIX: Removed the "currentClean !== targetClean" check. 
-            // pushState already changed the URL, so they always matched, preventing the fallback.
-            // Now, if anything fails, it safely falls back to standard browser navigation.
+            console.error("Navigation error:", error);
             window.location.href = fileUrl;
         }
     };
@@ -204,7 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.addEventListener("click", (e) => {
         if (e.target && e.target.id === "lotto-btn") {
-            
             const btn = e.target;
             const display = document.getElementById("lotto-display");
             const resultContainer = document.getElementById("result-link");

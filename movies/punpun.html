@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="favicon-lores.gif" type="image/gif">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>lilyphilia</title>
+        <link href="/main.css" rel="stylesheet" type="text/css" media="all">
+    </head>
+    <body>
+        <audio loop autoplay id="background">
+           <source src="/assets/audio/debussy_arabesque.mp3">
+        </audio>
+        <div id="intro-overlay">
+            <main3>
+                <div class="argh6" style="width: 600px; text-align: center; height: auto;">
+                    <font size="5" style="font-family: pgothic;">this site could mess you up if you got epilepsy</font>
+                    <br><br>
+                    <center><a id="enter-btn" href="#"><img src="/assets/ok.gif" alt="ok" width="30" height="30"></a></center>
+                </div>
+            </main3>
+        </div>
+        <div id="container" data-track="/assets/audio/debussy_arabesque.mp3" 
+        style="--bg-position-start: 0px 0px; --bg-image: url('/assets/movies/lily/lilybg.png'); --bg-size: 640px 640px;">
+            <div id="header"></div>
+            <nav id="navbar">
+              <ul>
+                <li><a class="nav nav-link lily-nav-text" href="/root.html">root</a></li>
+                <li><a class="nav nav-link lily-nav-text" href="/associates.html">associates</a></li>
+                <li><a class="nav nav-link lily-nav-text" href="/projects.html">projects</a></li>
+                <li><a class="nav nav-link lily-nav-text" href="/consumption.html">consumption</a></li>
+                <li><a class="nav nav-link lily-nav-text" href="/findings.html">findings</a></li>
+              </ul>
+            </nav>
+            <div id="flex">
+                <main3 id="mainSection">
+                    <div class="argh">
+                        <center><img src="/assets/barraconstruction.gif" width="506.47" height="45"/></center>
+                        <br>
+                        <center style="padding: 15px;"><a>I first watched All About Lily Chou Chou, well I'm not really sure when but some time in 2023<br><br>I cant say I have too much to say about it at this moment frankly, but you should watch it</a></center>
+                        <br><br><br>
+                        <marquee behavior=scroll direction="left" scrollamount="10"><img src=/assets/movies/lily/lilyphilia.gif></marquee>
+                        <br><br><br>
+                    </div>
+                </main3>
+            </div>
+            <footer>
+                <a class="nav nav-link" href="/buttons.html" style="color: white;">buttons</a><a style="color: white;"> | 2023 - 2026 | </a><a class="nav nav-link" href="https://carpmachinegun.net" style="color: white;">carpcorp</a>
+            </footer>
+        </div>
+    <script src="/singlepage.js"></script>
+    </body>
+</html>
+
+<style id="page-css">
+    :root {
+        -bg-image: url('/assets/movies/lily/lilybg.png');
+        --header-image: url('');
+        --boxr2: url('/assets/yuka.png');
+        --sidebar-image: ;
+        --margin-color: #41a51a;
+        --main-color: #ffffffee;
+        --text-color: #000000;
+        --project-color: #ffcccc;
+        --content: #000000;
+    }
+
+    a {
+      font-family: 'pgothic';
+      font-size: 18px;
+    }
+
+    body {
+        font-family: 'pgothic';
+        margin: 0;
+        padding-bottom: 10%;
+        
+        background-image: url('/assets/movies/lily/lilybg.png');
+            
+        background-color: rgb(30, 0, 0);
+        background-blend-mode: screen;
+        background-size: 640px 640px;
+        animation: stack-scroll 8s linear infinite;
+        color: var(--text-color);
+        animation-play-state: paused;
+    }
+
+    #intro-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        padding-top: 220px;
+        background-image: url('/assets/movies/lily/lilybg.png');
+        background-size: var(--bg-size, 640px 640px);
+        animation: chill 8s linear infinite;
+    }
+</style>
