@@ -391,6 +391,15 @@ footer.a {
     cursor: pointer;
 }
 
+.posterbox-nopage {
+    height: 120px;
+    width: 90px;
+    display: inline-block;
+    background-size: 100% 100%;
+    opacity: 75%;
+    border: black solid 3px;
+}
+
 .bigmoney {
     font-size: 30px;
     text-shadow: #080d46 1px 1px;
