@@ -53,14 +53,15 @@ body.animation-running {
 
 body.custom-bg-active {
     background-image: var(--bg-image) !important;
-    background-size: var(--bg-size, 200px 200px) !important; 
-    animation: custom-stack-scroll 8s linear infinite !important;
+    background-size: var(--bg-size, 200px 200px); 
+    animation: custom-stack-scroll 8s linear infinite;
     animation-play-state: paused !important;
 }
 
 body.custom-bg-active.animation-running {
     animation-play-state: running !important;
 }
+
 
 h1,
 h2,
@@ -759,6 +760,7 @@ footer.a {
         }
     }
 
+
 @keyframes custom-stack-scroll {
     0% {
         background-position: 140px 20px, 0px 0px, 0px 0px;
@@ -793,6 +795,16 @@ footer.a {
     100% {
         background-position: 1140px 820px, 500px 600px, 500px 200px;
     }
+}
+    
+@keyframes stack-scroll-640 {
+    0% { background-position: 0px 0px; }
+    100% { background-position: 640px 640px; }
+}
+    
+@keyframes stack-scroll-640-down {
+    0% { background-position: 0px 0px; }
+    100% { background-position: 0px 640px; }
 }
 
 @keyframes marquee-1 {

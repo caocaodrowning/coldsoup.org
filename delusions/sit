@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="favicon-lores.gif" type="image/gif">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>sitting on the floor can be beneficial for posture and reducing back pain</title>
+        <link href="/main.css" rel="stylesheet" type="text/css" media="all">
+    </head>
+    <body>
+        <audio loop autoplay id="background">
+           <source src="/assets/audio/lain_beauties_of_nature.mp3">
+        </audio>
+        <div id="intro-overlay">
+            <main3>
+                <div class="argh6" style="width: 600px; text-align: center; height: auto;">
+                    <font size="5" style="font-family: pgothic;">this site could mess you up if you got epilepsy</font>
+                    <br><br>
+                    <center><a id="enter-btn" href="#"><img src="/assets/ok.gif" alt="ok" width="30" height="30"></a></center>
+                </div>
+            </main3>
+        </div>
+        <div id="container" data-track="/assets/audio/lain_beauties_of_nature.mp3" style="--bg-position-start: 0px 0px; --bg-image: url('/assets/lainbg.png'); --bg-size: 100px 150px; animation: custom-stack-scroll1;">
+            <div id="header"></div>
+            <nav id="navbar">
+              <ul>
+                <li><a href="/root.html">root</a></li>
+                <li><a href="/associates.html">associates</a></li>
+                <li><a href="/projects.html">projects</a></li>
+                <li><a href="/consumption.html">consumption</a></li>
+                <li><a href="/findings.html">findings</a></li>
+              </ul>
+            </nav>
+            <div id="flex">
+                <main3>
+                    <div class="argh">
+                            <p style="margin-left: 220px;">
+                                he sits, cross legged on the floor.<br>
+                                &nbsphe sits, with a book in his hands.<br>
+                                &nbsp&nbsphe sits, with a vacant but tortured expression.<br>
+                                &nbsp&nbsp&nbsphe sits, closing his eyes as if to shed tears.<br>
+                                &nbsp&nbsp&nbsp&nbsphe sits, with a vacant - dry eyed expression.<br>
+                                &nbsp&nbsp&nbsp&nbsp&nbsphe sits, cross legged on the floor.<br>
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsphe sits, with a phone ringing in his pocket.<br>
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsphe sits, laughing at the phone in his hand with no expression.<br>
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsphe sits, a phone thrown across the room.<br>
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsphe sits, cross legged on the floor.<br>
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsphe sits, a book lying before him.<br>
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsphe sits, with a vacant expression.<br>
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsphe sits, cross legged on the floor.<br>
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsphe sits, cross legged on the floor.<br>
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsphe sits<br>
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsphe sits<br>
+                            </p>
+                                <center><p style="color: red;">END</p></center><p style="margin-top: -24px; margin-right: 10px; text-align: right;">written 14/10/24</p>
+                    </main3>
+                </div>
+            </main3>
+            </div>
+            <footer>
+                <a class="nav nav-link" href="/buttons.html" style="color: white;">buttons</a><a style="color: white;"> | 2023 - 2026 | </a><a class="nav nav-link" href="https://carpmachinegun.net" style="color: white;">carpcorp</a>
+            </footer>
+        </div>
+    <script src="/singlepage.js"></script>
+    </body>
+</html>
+
+<style id="page-css">
+    :root {
+        --bg-image: url('/assets/lainbg.png'); 
+        --header-image: url('');
+        --boxr2: url('/assets/yuka.png');
+        --sidebar-image: ;
+        --margin-color: #910000;
+        --main-color: #8f8f8fee;
+        --project-color: #ffcccc;
+        --content: #000000;
+    }
+
+    a {
+        font-family: 'pgothic';
+        font-size: 18px;
+    }
+
+    p {
+        font-family: 'pgothic';
+        font-size: 15px;
+    }
+    body {
+        font-family: 'pgothic';
+        margin: 0;
+        padding-bottom: 10%;
+        color: var(--text-color);
+    }
+
+    body.custom-bg-active {
+        background-image: none !important;
+        background-color: #2b7c3aa6 !important;
+    }
+
+    body.custom-bg-active::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; width: 100vw; height: 100vh;
+        z-index: -1;
+        
+        background-image: var(--bg-image);
+        background-color: #ff929273;
+        background-blend-mode: color-burn;
+        background-size: var(--bg-size, 100px 150px);
+        
+        animation: custom-stack-scroll1 8s linear infinite;
+        animation-play-state: paused;
+    }
+
+    body.custom-bg-active.animation-running::before {
+        animation-play-state: running;
+    }
+
+    #intro-overlay {
+        position: fixed;
+        top: 0; left: 0; width: 100vw; height: 100vh;
+        padding-top: 220px;
+        z-index: 9999;
+        
+        background-image: none !important; 
+        background-color: #2b7c3aa6 !important;
+    }
+
+    #intro-overlay::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        z-index: -1;
+        
+        background-image: var(--bg-image);
+        background-color: #f4ff9273;
+        background-blend-mode: color-burn;
+        background-size: var(--bg-size, 100px 150px);
+        
+        animation: chill 8s linear infinite;
+    }
+</style>
