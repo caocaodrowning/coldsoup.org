@@ -373,8 +373,22 @@ footer.a {
     height: 120px;
     width: 90px;
     display: inline-block;
-    border: black solid 3px;
     opacity: 75%;
+}
+
+.posterbox {
+    height: 120px;
+    width: 90px;
+    display: inline-block;
+    background-size: 100% 100%;
+    opacity: 75%;
+    border: black solid 3px;
+}
+
+.posterbox:hover {
+    background-color: #000000b6;
+    opacity: 90%;
+    cursor: pointer;
 }
 
 .bigmoney {
