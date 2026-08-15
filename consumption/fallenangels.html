@@ -4,12 +4,12 @@
         <link rel="icon" href="favicon-lores.gif" type="image/gif">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>lilyphilia</title>
+        <title>puru puru pururin</title>
         <link href="/main.css" rel="stylesheet" type="text/css" media="all">
     </head>
     <body>
         <audio loop autoplay id="background">
-           <source src="/assets/audio/debussy_arabesque.mp3">
+           <source src="/assets/audio/sunset.mp3">
         </audio>
         <div id="intro-overlay">
             <main3>
@@ -20,26 +20,28 @@
                 </div>
             </main3>
         </div>
-        <div id="container" data-track="/assets/audio/debussy_arabesque.mp3" 
-        style="--bg-position-start: 0px 0px; --bg-image: url('/assets/movies/lily/lilybg.png'); --bg-size: 640px 640px;">
+        <div id="container" data-track="/assets/audio/sunset.mp3" 
+        style="--bg-position-start: 0px 0px; --bg-image: url('/assets/misaki.jpg'); --bg-size: 640px 640px;">
             <div id="header"></div>
             <nav id="navbar">
               <ul>
-                <li><a class="lily-nav-text" href="/root.html">root</a></li>
-                <li><a class="lily-nav-text" href="/associates.html">associates</a></li>
-                <li><a class="lily-nav-text" href="/projects.html">projects</a></li>
-                <li><a class="lily-nav-text" href="/consumption.html">consumption</a></li>
-                <li><a class="lily-nav-text" href="/findings.html">findings</a></li>
+                <li><a href="/root.html">root</a></li>
+                <li><a href="/associates.html">associates</a></li>
+                <li><a href="/projects.html">projects</a></li>
+                <li><a href="/consumption.html">consumption</a></li>
+                <li><a href="/findings.html">findings</a></li>
               </ul>
             </nav>
             <div id="flex">
                 <main3 id="mainSection">
                     <div class="argh">
-                        <center><img src="/assets/barraconstruction.gif" width="506.47" height="45"/></center>
                         <br>
-                        <center style="padding: 15px;"><a>I first watched All About Lily Chou Chou, well I'm not really sure when but some time in 2023<br><br>I cant say I have too much to say about it at this moment frankly, but you should watch it</a></center>
-                        <br><br><br>
-                        <marquee behavior=scroll direction="left" scrollamount="10"><img src=/assets/movies/lily/lilyphilia.gif></marquee>
+                        <center style="padding: 15px;"><a>
+                            Fallen Angels is my other favourite movie.<br><br>
+                            Not that it's my second favourite per say, but both it and </a><a class="nav nav-link" href="/consumption/lily.html" style="color:red">All About Lily Chou Chou</a><a> just share the spot essentially.
+                            Lily was probably the most affective movie on me, but fallen angels is probably actually the most influential, were I to make a movie it would probably be aesthetically between this and </a><a class="nav nav-link" href="/consumption/loveandpop.html" style="color:red"> Love and Pop</a><a>.<br><br>
+                            I don't really have any interesting story for this one, but it's my favourite movie.
+                        </a></center>
                         <br><br><br>
                     </div>
                 </main3>
@@ -54,11 +56,11 @@
 
 <style id="page-css">
     :root {
-        -bg-image: url('/assets/movies/lily/lilybg.png');
+        -bg-image: url('/assets/misaki.jpg');
         --header-image: url('');
         --boxr2: url('/assets/yuka.png');
         --sidebar-image: ;
-        --margin-color: #54be46;
+        --margin-color: #41a51a;
         --main-color: #ffffffee;
         --text-color: #000000;
         --project-color: #ffcccc;
@@ -75,7 +77,7 @@
         margin: 0;
         padding-bottom: 10%;
         
-        background-image: url('/assets/movies/lily/lilybg.png');
+        background-image: var(--bg-image);
             
         background-color: rgb(30, 0, 0);
         background-blend-mode: screen;
@@ -92,7 +94,7 @@
         width: 100vw;
         height: 100vh;
         padding-top: 220px;
-        background-image: url('/assets/movies/lily/lilybg.png');
+        background-image: var(--bg-image);
         background-size: var(--bg-size, 640px 640px);
         animation: chill 8s linear infinite;
     }
