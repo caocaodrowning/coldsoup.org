@@ -156,6 +156,30 @@ input {
     margin-right: -10px
 }
 
+a.writing {
+    color:#807700!important;
+    opacity: 75%;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+a.writing:hover {
+    color:#6d6500!important;
+    opacity: 100%;
+}
+
+a.delusion {
+    color:white!important;
+    opacity: 75%;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+a.delusion:hover {
+    color:#ffffff97!important;
+    opacity: 100%;
+}
+
 #navbar li a.lily-nav-text:hover {
     color: #cf4c0f;
     text-shadow: -9px 15px 0px #d68a67, -18px 30px 0px #e6b6a2;
