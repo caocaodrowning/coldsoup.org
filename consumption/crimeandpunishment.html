@@ -4,12 +4,12 @@
         <link rel="icon" href="favicon-lores.gif" type="image/gif">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>quotations of coldsoup</title>
+        <title>im a lazy person</title>
         <link href="/main.css" rel="stylesheet" type="text/css" media="all">
     </head>
     <body>
         <audio loop autoplay id="background">
-           <source src="/assets/audio/saya_silent_sorrow.mp3">
+           <source src="/assets/audio/dies_irae.m4a">
         </audio>
         <div id="intro-overlay">
             <main3>
@@ -20,7 +20,8 @@
                 </div>
             </main3>
         </div>
-        <div id="container" data-track="/assets/audio/saya_silent_sorrow.mp3" style="--bg-position-start: 0px 0px; --bg-image: url('/assets/writing.jpg'); --bg-size: 500px 200px; animation: custom-stack-scroll3 8s linear infinite;">
+        <div id="container" data-track="/assets/audio/dies_irae.m4a" 
+        style="--bg-position-start: 0px 0px; --bg-image: url('/assets/consumption/axe.jpg'); --bg-size: 640px 640px;">
             <div id="header"></div>
             <nav id="navbar">
               <ul>
@@ -32,18 +33,15 @@
               </ul>
             </nav>
             <div id="flex">
-                <main3>
+                <main3 id="mainSection">
                     <div class="argh">
-                        <center>
-                            <a class="nav nav-link" href="/writings/employed.html" style="color: #807700;">employed</a><br>
-                            <a class="nav nav-link" href="/writings/neck.html" style="color: #807700;">neck</a><br>
-                            <a class="nav nav-link" href="/writings/canned.html" style="color: #807700;">canned</a><br>
-                            <a class="nav nav-link" href="/writings/carton.html" style="color: #807700;">carton</a><br>
-                            <a class="nav nav-link" href="/writings/sole.html" style="color: #807700;">sole</a><br>
-                            <a class="nav nav-link" href="/writings/async.html" style="color: #807700;">async</a>
-                        </center>
+                        <center style="padding: 15px;"><a>
+                            Crime and Punishent is actually my favourite book, though Dazai still remains my favourite writer.<br><br>
+                            I first read Crime and Punishment when I was probably like thirteen, shortly after reading Notes from Underground (likely the clearer influence).
+                            I cant say exactly what I like so much about the book, but probably Raskolnikovs extreme neuroticism and anxiety.
+                        </a></center>
                     </div>
-            </main3>
+                </main3>
             </div>
             <footer>
                 <a class="nav nav-link" href="/buttons.html" style="color: white;">buttons</a><a style="color: white;"> | 2023 - 2026 | </a><a class="nav nav-link" href="https://carpmachinegun.net" style="color: white;">carpcorp</a>
@@ -55,73 +53,46 @@
 
 <style id="page-css">
     :root {
-        --bg-image: url('/assets/writing.jpg'); 
+        -bg-image: url('/assets/consumption/axe.jpg');
         --header-image: url('');
         --boxr2: url('/assets/yuka.png');
         --sidebar-image: ;
-        --margin-color: #d5ff8d;
+        --margin-color: #6b0000;
         --main-color: #ffffffee;
+        --text-color: #003d26;
         --project-color: #ffcccc;
         --content: #000000;
     }
 
     a {
-        font-family: 'pgothic';
-        font-size: 18px;
+      font-family: 'pgothic';
+      font-size: 18px;
     }
 
     body {
         font-family: 'pgothic';
         margin: 0;
         padding-bottom: 10%;
-        color: var(--text-color);
-    }
-
-    body.custom-bg-active {
-        background-image: none !important;
-        background-color: #2b7c3aa6 !important;
-    }
-
-    body.custom-bg-active::before {
-        content: "";
-        position: fixed;
-        top: 0; left: 0; width: 100vw; height: 100vh;
-        z-index: -1;
         
         background-image: var(--bg-image);
-        background-color: #f4ff9273;
-        background-blend-mode: color-burn;
-        background-size: var(--bg-size, 500px 200px);
-        
-        animation: custom-stack-scroll3 8s linear infinite;
+            
+        background-color: rgb(30, 0, 0);
+        background-blend-mode: screen;
+        background-size: 640px 640px;
+        animation: stack-scroll-640-r 8s linear infinite !important;
+        color: var(--text-color);
         animation-play-state: paused;
-    }
-
-    body.custom-bg-active.animation-running::before {
-        animation-play-state: running;
     }
 
     #intro-overlay {
         position: fixed;
-        top: 0; left: 0; width: 100vw; height: 100vh;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
         padding-top: 220px;
-        z-index: 9999;
-        
-        background-image: none !important; 
-        background-color: #2b7c3aa6 !important;
-    }
-
-    #intro-overlay::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        z-index: -1;
-        
         background-image: var(--bg-image);
-        background-color: #f4ff9273;
-        background-blend-mode: color-burn;
-        background-size: var(--bg-size, 500px 200px);
-        
+        background-size: var(--bg-size, 640px 640px);
         animation: chill 8s linear infinite;
     }
 </style>
