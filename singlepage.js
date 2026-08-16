@@ -16,15 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const cleanFile = getCleanName(path);
         
         const activeContainer = document.getElementById("container");
-        const isReal404Page = activeContainer && activeContainer.getAttribute("data-track") === "/assets/audio/lily_chou_chou_detune.mp3";
-
-        if (isReal404Page) {
-            console.log("bruh");
-            manageAudioTracks();
-            syncStylesToBody(); 
-            bindLinks(); 
-            return;
-        }
 
         if (path.endsWith("index.html") || path === "/" || path === "" || cleanFile === "index") {
             await handleNavigation("root.html");
@@ -111,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let htmlText = "";
 
             if (pageCache[fileUrl]) {
-                htmlText = pageCache[fileUrl]; // Loads instantly from cache if visited before
+                htmlText = pageCache[fileUrl];
             } else {
                 const response = await fetch(fileUrl);
                 if (!response.ok) {
@@ -120,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     return;
                 }
                 htmlText = await response.text();
-                pageCache[fileUrl] = htmlText; // FIX: Actually save the fetched page to the cache!
+                pageCache[fileUrl] = htmlText;
             }
 
             const parser = new DOMParser();
@@ -160,15 +151,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 manageAudioTracks();
                 bindLinks();
             } else {
-                // FIX: If the fetched page is missing #container, throw an error to force a hard reload
                 throw new Error("Missing container in target page.");
             }
         } catch (error) {
             console.error("bruh:", error);
             
-            // FIX: Removed the "currentClean !== targetClean" check. 
-            // pushState already changed the URL, so they always matched, preventing the fallback.
-            // Now, if anything fails, it safely falls back to standard browser navigation.
             window.location.href = fileUrl;
         }
     };
