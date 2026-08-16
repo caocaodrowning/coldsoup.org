@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="favicon-lores.gif" type="image/gif">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>lifes like a staircase</title>
+        <link href="/main.css" rel="stylesheet" type="text/css" media="all">
+    </head>
+    <body>
+        <audio loop autoplay id="background">
+           <source src="/assets/audio/totono_end_of_eternity.mp3">
+        </audio>
+        <div id="intro-overlay">
+            <main3>
+                <div class="argh6" style="width: 600px; text-align: center; height: auto;">
+                    <font size="5" style="font-family: pgothic;">this site could mess you up if you got epsilepsy</font>
+                    <br><br>
+                    <center><a onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" id="enter-btn" href="#"><img src="/assets/ok.gif" alt="ok" width="30" height="30"></a></center>
+                </div>
+            </main3>
+        </div>
+        <div id="container" data-track="/assets/audio/totono_end_of_eternity.mp3" 
+        style="--bg-position-start: 0px 0px; --bg-image: url('/assets/consumption/hana.jpg'); --bg-size: 640px 640px;">
+            <div id="header"></div>
+            <nav id="navbar">
+              <ul>
+                <li><a onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav nav-link" href="/root.html">root</a></li>
+                <li><a onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav nav-link" href="/associates.html">associates</a></li>
+                <li><a onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav nav-link" href="/projects.html">projects</a></li>
+                <li><a onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav nav-link" href="/consumption.html">consumption</a></li>
+                <li><a onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav nav-link" href="/findings.html">findings</a></li>
+              </ul>
+            </nav>
+            <div id="flex">
+                <main3 id="mainSection">
+                    <div class="argh">
+                        <center style="padding: 15px;"><a>
+                            I prefer the Aku no Hana manga to the anime, by a fairly wide margin actually――that said I cant particularly recall the manga as well as I've only read it once and it was a few yaers ago, and of course it's longer and has some of the better parts of the story.<br><br>
+                            But insofar as whats adapted, the anime is certainly superior. If I had to say when I first watched it I would probably guess maybe july of 2023, it's another example where I cant quite recall where I heard about it, although I already vaguely knew of the manga and Shuzo Oshimi.<br><br>
+                            Regardless of where I heard of it though, I ended up seeing the classroom scene, and whether it was the direction itself, the Asa Chang & Junray ost, or maybe just the Sade sample, I was captivated. I immediately flung my mouse towards a new tab and started downloading the show, and probabbly around five hours later I had a new show among my favourites, and also immense dissapointment at the lack of taste among anime fans and the lack of a second season.<br><br>
+                            In some sense it's a little cruel to recommend something that only adapts like a third of the story. But in my opinion something doesn't even really need a real end, chapter 364 of Berserk is kind of a great ending in my opinion, and Aku no Hana is certainly worth watching.<br><br>
+                            It might give some people blueballs, but you can always read the manga.
+                        </center>
+                        </a>
+                    </div>
+                </main3>
+            </div>
+            <footer>
+                <a onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav nav-link" href="/buttons.html" style="color: white;">buttons</a><a style="color: white;"> | 2023 - 2026 | </a><a onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav nav-link" href="https://carpmachinegun.net" style="color: white;">carpcorp</a>
+            </footer>
+        </div>
+    <script src="/singlepage.js"></script>
+    </body>
+</html>
+
+<style id="page-css">
+    :root {
+        -bg-image: url('/assets/consumption/hana.jpg');
+        --header-image: url('');
+        --boxr2: url('/assets/yuka.png');
+        --sidebar-image: ;
+        --margin-color: #c43e3e;
+        --main-color: #ffffffee;
+        --text-color: #443a5f;
+        --project-color: #ffcccc;
+        --content: #000000;
+    }
+
+    a {
+      font-family: 'pgothic';
+      font-size: 18px;
+    }
+
+    body {
+        font-family: 'pgothic';
+        margin: 0;
+        padding-bottom: 10%;
+        background-image: var(--bg-image);
+        background-color: rgb(30, 0, 0);
+        background-blend-mode: screen;
+        background-size: 640px 640px;
+        animation: stack-scroll-640-r 8s linear infinite !important;
+        color: var(--text-color);
+        animation-play-state: paused;
+    }
+
+    #intro-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        padding-top: 220px;
+        background-image: var(--bg-image);
+        background-size: var(--bg-size, 640px 640px);
+        animation: chill 8s linear infinite;
+    }
+</style>
