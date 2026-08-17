@@ -840,6 +840,11 @@ footer.a {
     0% { background-position: 0px 0px; }
     100% { background-position: 0px -640px; }
 }
+    
+@keyframes stack-scroll-500-down {
+    0% { background-position: 0px 0px; }
+    100% { background-position: 0px 400px; }
+}
 
 
 @keyframes marquee-1 {

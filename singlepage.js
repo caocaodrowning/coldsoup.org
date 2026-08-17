@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const initSite = async () => {
         const path = window.location.pathname;
         const cleanFile = getCleanName(path);
-        
+
         const activeContainer = document.getElementById("container");
 
         if (path.endsWith("index.html") || path === "/" || path === "" || cleanFile === "index") {
@@ -36,14 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const overlay = document.getElementById("intro-overlay");
 
         if (enterBtn && overlay) {
-            e.preventDefault(); 
+            e.preventDefault();
 
             overlay.style.opacity = "0";
 
             setTimeout(() => {
                 document.body.classList.add("animation-running");
-                syncStylesToBody(); 
-            }, 300); 
+                syncStylesToBody();
+            }, 300);
 
             setTimeout(() => {
                 overlay.remove();
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         } else {
             document.body.classList.remove("custom-bg-active");
-            
+
             document.body.style.removeProperty("--bg-image");
             document.body.style.removeProperty("--bg-size");
             document.body.style.removeProperty("--bg-position-start");
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.head.appendChild(styleTag);
                 }
 
-                syncStylesToBody(); 
+                syncStylesToBody();
                 manageAudioTracks();
                 bindLinks();
             } else {
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         } catch (error) {
             console.error("bruh:", error);
-            
+
             window.location.href = fileUrl;
         }
     };
@@ -176,6 +176,48 @@ document.addEventListener("DOMContentLoaded", () => {
         handleNavigation(targetFile);
     };
 
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const audioBuffers = {};
+
+    const loadSound = async (name, url) => {
+        try {
+            const response = await fetch(url);
+            const arrayBuffer = await response.arrayBuffer();
+            const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
+            audioBuffers[name] = audioBuffer;
+        } catch (error) {
+            console.error(`Failed to load sound ${name}:`, error);
+        }
+    };
+
+    const playSound = (name) => {
+        if (!audioBuffers[name]) return;
+
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+
+        const source = audioCtx.createBufferSource();
+        source.buffer = audioBuffers[name];
+        source.connect(audioCtx.destination);
+        source.start(0);
+    };
+
+    loadSound('hover', '/assets/audio/hover.mp3');
+    loadSound('click', '/assets/audio/click.mp3');
+
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.closest('.hover')) {
+            playSound('hover');
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('.hover') || e.target.closest('.click')) {
+            playSound('click');
+        }
+    });
+
     const friendsList = [
         { name: "JACKPOT !!", url: "https://www.youtube.com/@carpmachinegun" },
         { name: "romnk", url: "https://www.youtube.com/@lonk7500" },
@@ -191,26 +233,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.addEventListener("click", (e) => {
         if (e.target && e.target.id === "lotto-btn") {
-            
+
             const btn = e.target;
             const display = document.getElementById("lotto-display");
             const resultContainer = document.getElementById("result-link");
 
             if (!display || !resultContainer) return;
 
-            btn.disabled = true; 
-            resultContainer.innerHTML = ""; 
-            display.style.color = "#00ff00"; 
-            
+            btn.disabled = true;
+            resultContainer.innerHTML = "";
+            display.style.color = "#00ff00";
+
             let spins = 0;
-            const maxSpins = 40; 
-            let speed = 40; 
-            
+            const maxSpins = 40;
+            let speed = 40;
+
             function spin() {
                 const randomIndex = Math.floor(Math.random() * friendsList.length);
                 display.innerText = friendsList[randomIndex].name;
                 spins++;
-                
+
                 if (spins < maxSpins) {
                     if (spins > 25) speed += 15;
                     if (spins > 35) speed += 50;
@@ -218,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else {
                     const winner = friendsList[randomIndex];
                     display.innerText = winner.name;
-                    display.style.color = "red"; 
+                    display.style.color = "red";
                     resultContainer.innerHTML = `<a href="${winner.url}" style="color: red; text-decoration: none; border-bottom: 1px dashed red;">>>> OFF YOU GO <<<</a>`;
                     btn.disabled = false;
                 }

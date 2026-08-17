@@ -12,6 +12,8 @@
         <audio loop autoplay id="background">
            <source src="/assets/audio/lain_beauties_of_nature.mp3">
         </audio>
+        <audio id="hover-sound-template" src="/assets/audio/hover.mp3" preload="auto"></audio>
+        <audio id="click-sound-template" src="/assets/audio/click.mp3" preload="auto"></audio>
         <div id="intro-overlay">
             <main3>
                 <div class="argh6" style="width: 600px; text-align: center; height: auto;">
@@ -25,22 +27,22 @@
             <nav id="navbar">
                 <ul>
                     <li>
-                        <a onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav nav-link" href="/root.html">
+                        <a class="hover nav nav-link" href="/root.html">
                             root
                         </a>
                     </li>
                     <li>
-                        <a onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav nav-link" href="/associates.html">
+                        <a class="hover nav nav-link" href="/associates.html">
                             associates
                         </a>
                     </li>
                     <li>
-                        <a onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav nav-link" href="/projects.html">
+                        <a class="hover nav nav-link" href="/projects.html">
                             projects
                         </a>
                     </li>
                     <li>
-                        <a onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav nav-link" href="/findings.html">
+                        <a class="hover nav nav-link" href="/findings.html">
                             findings
                         </a>
                     </li>
@@ -387,21 +389,22 @@
                 <main id="mainSection">
                     <div class="argh">
                         <font size="-1"><center>
-                            <span onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav-link posterbox" href="/consumption/punpun.html" style="background-image: url('/assets/books/punpun.jpg');"></span>
-                            <span onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav-link posterbox" href="/consumption/ningenshikkaku.html" style="background-image: url('/assets/books/ningenshikkaku.png');"></span>
-                            <span onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav-link posterbox" href="/consumption/subahibi.html" style="background-image: url('/assets/games/subahibi.jpg');"></span>
-                            <span onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav-link posterbox" href="/consumption/lily.html" style="background-image: url('/assets/movies/lily.jpg');"></span>
-                            <span onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav-link posterbox" href="/consumption/fallenangels.html" style="background-image: url('/assets/movies/fallenangels.jpg');"></span>
-                            <span onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav-link posterbox" href="/consumption/crimeandpunishment.html" style="background-image: url('/assets/books/crimeandpunishment.png');"></span>
-                            <span onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav-link posterbox" href="/consumption/nhk.html" style="background-image: url('/assets/books/nhk.png');"></span>
-                            <span onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav-link posterbox" href="/consumption/kitakawa.html" style="background-image: url('/assets/books/kitakawa.jpg');"></span>
-                            <span onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav-link posterbox" href="/consumption/totono.html" style="background-image: url('/assets/games/totono.jpg');"></span>
-                            <span onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav-link posterbox" href="/consumption/akunohana.html" style="background-image: url('/assets/anime/akunohana.jpg');"></span>
+                            <span class="hover nav-link posterbox" href="/consumption/punpun.html" style="background-image: url('/assets/books/punpun.jpg');"></span>
+                            <span class="hover nav-link posterbox" href="/consumption/ningenshikkaku.html" style="background-image: url('/assets/books/ningenshikkaku.png');"></span>
+                            <span class="hover nav-link posterbox" href="/consumption/subahibi.html" style="background-image: url('/assets/games/subahibi.jpg');"></span>
+                            <span class="hover nav-link posterbox" href="/consumption/lily.html" style="background-image: url('/assets/movies/lily.jpg');"></span>
+                            <span class="hover nav-link posterbox" href="/consumption/fallenangels.html" style="background-image: url('/assets/movies/fallenangels.jpg');"></span>
+                            <span class="hover nav-link posterbox" href="/consumption/crimeandpunishment.html" style="background-image: url('/assets/books/crimeandpunishment.png');"></span>
+                            <span class="hover nav-link posterbox" href="/consumption/nhk.html" style="background-image: url('/assets/books/nhk.png');"></span>
+                            <span class="hover nav-link posterbox" href="/consumption/kitakawa.html" style="background-image: url('/assets/books/kitakawa.jpg');"></span>
+                            <span class="hover nav-link posterbox" href="/consumption/akunohana.html" style="background-image: url('/assets/anime/akunohana.jpg');"></span>
+                            <span class="hover nav-link posterbox" href="/consumption/totono.html" style="background-image: url('/assets/games/totono.jpg');"></span>
+                            <span class="hover nav-link posterbox" href="/consumption/muvluv.html" style="background-image: url('/assets/games/muvluv.jpg');"></span>
+                            <span class="hover nav-link posterbox" href="/consumption/chaoshead.html" style="background-image: url('/assets/games/chaoshead.jpg');"></span>
                             <span class="nav-link posterbox-nopage" "/consumption/monogatari/otorimonogatari.html" style="background-image: url('/assets/books/otorimonogatari.webp');"></span>
                             <span class="nav-link posterbox-nopage" "/consumption/loveandpop.html" style="background-image: url('/assets/movies/loveandpop.jpg');"></span>
                             <span class="nav-link posterbox-nopage" "/consumption/ritual.html" style="background-image: url('/assets/movies/ritual.jpg');"></span>
                             <span class="nav-link posterbox-nopage" "/consumption/tatami.html" style="background-image: url('/assets/anime/tatami.png');"></span>
-                            <span class="nav-link posterbox-nopage" "/consumption/chaoshead.html" style="background-image: url('/assets/games/chaoshead.jpg');"></span>
                             <span class="nav-link posterbox-nopage" "/consumption/malkovich.html" style="background-image: url('/assets/movies/malkovich.webp');"></span>
                             <span class="nav-link posterbox-nopage" "/consumption/lovehotel.html" style="background-image: url('/assets/movies/lovehotel.jpg');"></span>
                             <span class="nav-link posterbox-nopage" "/consumption/gundam/0080.html" style="background-image: url('/assets/anime/warinthepocket.jpg');"></span>
@@ -410,10 +413,9 @@
                             <span class="nav-link posterbox-nopage" "/consumption/policestory.html" style="background-image: url('/assets/movies/policestory.jpg');"></span>
                             <span class="nav-link posterbox-nopage" "/consumption/eva.html" style="background-image: url('/assets/anime/eva.jpg');"></span>
                             <span class="nav-link posterbox-nopage" "/consumption/meltyblood.html" style="background-image: url('/assets/games/meltyblood.webp');"></span>
-                            <span class="nav-link posterbox-nopage" "/consumption/muvluv.html" style="background-image: url('/assets/games/muvluv.jpg');"></span>
                             <span class="nav-link posterbox-nopage" "/consumption/oldboy.html" style="background-image: url('/assets/movies/oldboy.jpg');"></span>
                             <span class="nav-link posterbox-nopage" "/consumption/burning.html" style="background-image: url('/assets/movies/burning.png');"></span>
-                            <span onmouseover="new Audio('/assets/audio/hover.mp3').play()" onclick="new Audio('/assets/audio/click.mp3').play()" class="nav-link posterbox" href="/consumption/euphoria.html" style="background-image: url('/assets/games/euphoria.jpg');"></span>
+                            <span class="hover nav-link posterbox" href="/consumption/euphoria.html" style="background-image: url('/assets/games/euphoria.jpg');"></span>
                             <span class="nav-link posterbox-nopage" "/consumption/futakoialt.html" style="background-image: url('/assets/anime/futakoialt.jpg');"></span>
                             <span class="nav-link posterbox-nopage" "/consumption/matsuko.html" style="background-image: url('/assets/movies/matsuko.png');"></span>
                             <span class="nav-link posterbox-nopage" "/consumption/akira.html" style="background-image: url('/assets/anime/akira.jpg');"></span>
@@ -432,7 +434,7 @@
                 </main>
             </div>
             <footer>
-                <a onclick="new Audio('/assets/audio/click.mp3').play()" class="nav nav-link" href="/buttons.html" style="color: white;">buttons</a><a style="color: white;"> | 2023 - 2026 | </a><a onclick="new Audio('/assets/audio/click.mp3').play()" class="nav nav-link" href="https://carpmachinegun.net" style="color: white;">carpcorp</a>
+                <a class="click nav nav-link" href="/buttons.html" style="color: white;">buttons</a><a style="color: white;"> | 2023 - 2026 | </a><a class="click nav nav-link" href="https://carpmachinegun.net" style="color: white;">carpcorp</a>
             </footer>
         </div>
     <script src="/singlepage.js"></script>
