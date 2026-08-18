@@ -422,6 +422,7 @@ footer.a {
 
 .posterbox-nopage {
     background-image: var(--poster-image);
+    Transform: scale(0.95);
     height: 120px;
     width: 90px;
     display: inline-block;
