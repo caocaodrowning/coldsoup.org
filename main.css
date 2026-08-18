@@ -25,7 +25,8 @@
     --margin-color: #9e4242;
     --main-color: #e5d1bce2;
     --text-color: #ffffff;
-    --project-color: #ffcccc; text-shadow: black 1px 1px;
+    --project-color: #ffcccc;
+    text-shadow: black 1px 1px;
     --content: #000000;
 }
 
@@ -53,7 +54,7 @@ body.animation-running {
 
 body.custom-bg-active {
     background-image: var(--bg-image) !important;
-    background-size: var(--bg-size, 200px 200px); 
+    background-size: var(--bg-size, 200px 200px);
     animation: custom-stack-scroll 8s linear infinite;
     animation-play-state: paused !important;
 }
@@ -146,7 +147,7 @@ input {
 #navbar li a.lily-nav-text {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
-    color: #ea5815; 
+    color: #ea5815;
     text-decoration: none;
     display: inline-block;
     text-transform: capitalize;
@@ -157,27 +158,31 @@ input {
 }
 
 a.writing {
-    color:#807700!important;
+    color: #807700 !important;
     opacity: 75%;
     font-size: 20px;
     line-height: 24px;
 }
 
 a.writing:hover {
-    color:#6d6500!important;
+    color: #6d6500 !important;
     opacity: 100%;
 }
 
 a.delusion {
-    color:white!important;
+    color: white !important;
     opacity: 75%;
     font-size: 20px;
     line-height: 24px;
 }
 
 a.delusion:hover {
-    color:#ffffff97!important;
+    color: #ffffff97 !important;
     opacity: 100%;
+}
+
+a.nav:hover {
+    transform: scale(1.0);
 }
 
 #navbar li a.lily-nav-text:hover {
@@ -403,18 +408,19 @@ footer.a {
 
 .posterbox {
     background-image: var(--poster-image);
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     Transform: scale(0.95);
     height: 120px;
     width: 90px;
     display: inline-flex;
-    background-size: 100% 100%;
     opacity: 75%;
     border: black solid 3px;
 }
 
 .posterbox:hover {
     Transform: scale(1);
+    background-repeat: no-repeat;
     background-size: 100% 100%;
     opacity: 100%;
     cursor: pointer;
@@ -714,22 +720,22 @@ footer.a {
     margin-bottom: 10px;
 }
 
-.column-scroll { 
+.column-scroll {
     max-width: 100%;
     width: 100%;
     display: -ms-flexbox;
     display: flex;
-    overflow: clip; 
+    overflow: clip;
     line-height: 13px;
 }
 
-.column-scrollV { 
+.column-scrollV {
     max-width: 100%;
     width: 100%;
     display: -ms-flexbox;
     display: flex;
     flex-direction: column;
-    overflow: clip; 
+    overflow: clip;
     line-height: 13px;
 }
 
@@ -755,46 +761,50 @@ footer.a {
     color: #fff;
 }
 
-.text-scroll span, 
-.text-scrollR span, 
-.text-scrollV span, 
+.text-scroll span,
+.text-scrollR span,
+.text-scrollV span,
 .text-scrollSTILL span {
     line-height: 13px;
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
 
 @keyframes chill {
-        0% {
-            background-position: 140px 20px, 0px 0px, 0px 0px;
-        }
-        100% {
-            background-position: 140px 20px, 0px 0px, 0px 0px;
-        }
+    0% {
+        background-position: 140px 20px, 0px 0px, 0px 0px;
     }
+
+    100% {
+        background-position: 140px 20px, 0px 0px, 0px 0px;
+    }
+}
 
 @keyframes chill1 {
     0% {
         background-position: 100px 0px, 0px 0px, 30px 100px, 0px 0px;
     }
+
     100% {
         background-position: 100px 0px, 0px 0px, 30px 100px, 0px 0px;
     }
 }
 
 @keyframes stack-scroll {
-        0% {
-            background-position: 140px 20px, 0px 0px, 0px 0px;
-        }
-        100% {
-            background-position: 840px 820px, 700px 700px, 0px 0px;
-        }
+    0% {
+        background-position: 140px 20px, 0px 0px, 0px 0px;
     }
+
+    100% {
+        background-position: 840px 820px, 700px 700px, 0px 0px;
+    }
+}
 
 
 @keyframes custom-stack-scroll {
     0% {
         background-position: 140px 20px, 0px 0px, 0px 0px;
     }
+
     100% {
         background-position: 840px 820px, 700px 700px, 150px 150px;
     }
@@ -804,6 +814,7 @@ footer.a {
     0% {
         background-position: 140px 20px, 0px 0px, 0px 0px;
     }
+
     100% {
         background-position: 840px 770px, 700px 750px, 200px 150px;
     }
@@ -813,6 +824,7 @@ footer.a {
     0% {
         background-position: 100px 0px, 0px 0px, 0px 0px;
     }
+
     100% {
         background-position: 900px 800px, 700px 750px, 200px 150px;
     }
@@ -822,34 +834,60 @@ footer.a {
     0% {
         background-position: 140px 20px, 0px 0px, 0px 0px;
     }
+
     100% {
         background-position: 1140px 820px, 500px 600px, 500px 200px;
     }
 }
-    
+
 @keyframes stack-scroll-640 {
-    0% { background-position: 0px 0px; }
-    100% { background-position: 640px 640px; }
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: 640px 640px;
+    }
 }
-    
+
 @keyframes stack-scroll-640-r {
-    0% { background-position: 0px 0px; }
-    100% { background-position: -640px 640px; }
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: -640px 640px;
+    }
 }
-    
+
 @keyframes stack-scroll-640-down {
-    0% { background-position: 0px 0px; }
-    100% { background-position: 0px 640px; }
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: 0px 640px;
+    }
 }
-    
+
 @keyframes stack-scroll-640-up {
-    0% { background-position: 0px 0px; }
-    100% { background-position: 0px -640px; }
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: 0px -640px;
+    }
 }
-    
+
 @keyframes stack-scroll-500-down {
-    0% { background-position: 0px 0px; }
-    100% { background-position: 0px 400px; }
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: 0px 400px;
+    }
 }
 
 
