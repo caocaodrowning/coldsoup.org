@@ -402,6 +402,8 @@ footer.a {
 }
 
 .posterbox {
+    background-image: var(--poster-image);
+    background-size: cover;
     height: 120px;
     width: 90px;
     display: inline-block;
@@ -411,12 +413,14 @@ footer.a {
 }
 
 .posterbox:hover {
-    background-color: #000000b6;
+    Transform: scale(1.02);
+    background-size: 100% 100%;
     opacity: 100%;
     cursor: pointer;
 }
 
 .posterbox-nopage {
+    background-image: var(--poster-image);
     height: 120px;
     width: 90px;
     display: inline-block;
