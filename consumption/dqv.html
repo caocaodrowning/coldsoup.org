@@ -4,12 +4,12 @@
         <link rel="icon" href="favicon-lores.gif" type="image/gif">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>rot, rot, rot beyond, rot completely beyond psychosis, so be it</title>
+        <title>no translation</title>
         <link href="/main.css" rel="stylesheet" type="text/css" media="all">
     </head>
     <body>
         <audio loop autoplay id="background">
-           <source src="/assets/audio/lain_beauties_of_nature.mp3">
+           <source src="/assets/audio/dqv_intermezzo.mp3">
         </audio>
         <div id="intro-overlay">
             <main3>
@@ -20,7 +20,8 @@
                 </div>
             </main3>
         </div>
-        <div id="container" data-track="/assets/audio/lain_beauties_of_nature.mp3" style="--bg-position-start: 0px 0px; --bg-image: url('/assets/lainbg.png'); --bg-size: 100px 150px; animation: custom-stack-scroll1;">
+        <div id="container" data-track="/assets/audio/dqv_intermezzo.mp3" 
+        style="--bg-position-start: 0px 0px; --bg-image: url('/assets/consumption/dqv.png'); --bg-size: 500px 400px;">
             <div id="header"></div>
             <nav id="navbar">
               <ul>
@@ -32,17 +33,14 @@
               </ul>
             </nav>
             <div id="flex">
-                <main3>
+                <main3 id="mainSection">
                     <div class="argh">
-                        <center>
-                            <p>
-                                if i were less self aware, then i could reach psychosis<br>
-                                but i was born with an understanding, and for that i will rot
-                            </p>
+                        <center style="padding: 15px;"><a>
+                            They thought I wrote something lol.
                         </center>
-                    </main3>
-                </div>
-            </main3>
+                        </a>
+                    </div>
+                </main3>
             </div>
             <footer>
                 <a class="click nav nav-link" href="/buttons.html" style="color: white;">buttons</a><a style="color: white;"> | 2023 - 2026 | </a><a href="https://carpmachinegun.net" style="color: white;">carpcorp</a>
@@ -54,77 +52,44 @@
 
 <style id="page-css">
     :root {
-        --bg-image: url('/assets/lainbg.png'); 
+        --bg-image: url('/assets/consumption/dqv.png');
         --header-image: url('');
         --boxr2: url('/assets/yuka.png');
         --sidebar-image: ;
-        --margin-color: #910000;
-        --main-color: #8f8f8fee;
+        --margin-color: #8802b1;
+        --main-color: #ffffffee;
+        --text-color: black;
         --project-color: #ffcccc;
         --content: #000000;
     }
 
     a {
-        font-family: 'pgothic';
-        font-size: 18px;
+      font-family: 'pgothic';
+      font-size: 18px;
     }
 
-    p {
-        font-family: 'pgothic';
-        font-size: 18px;
-    }
     body {
         font-family: 'pgothic';
         margin: 0;
         padding-bottom: 10%;
-        color: var(--text-color);
-    }
-
-    body.custom-bg-active {
-        background-image: none !important;
-        background-color: #2b7c3aa6 !important;
-    }
-
-    body.custom-bg-active::before {
-        content: "";
-        position: fixed;
-        top: 0; left: 0; width: 100vw; height: 100vh;
-        z-index: -1;
-        
         background-image: var(--bg-image);
-        background-color: #ff929273;
-        background-blend-mode: color-burn;
-        background-size: var(--bg-size, 100px 150px);
-        
-        animation: custom-stack-scroll1 8s linear infinite;
+        background-color: rgb(30, 0, 0);
+        background-blend-mode: screen;
+        background-size: 500px 400px;
+        animation: stack-scroll-500-upright 8s linear infinite !important;
+        color: var(--text-color);
         animation-play-state: paused;
-    }
-
-    body.custom-bg-active.animation-running::before {
-        animation-play-state: running;
     }
 
     #intro-overlay {
         position: fixed;
-        top: 0; left: 0; width: 100vw; height: 100vh;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
         padding-top: 220px;
-        z-index: 9999;
-        
-        background-image: none !important; 
-        background-color: #2b7c3aa6 !important;
-    }
-
-    #intro-overlay::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        z-index: -1;
-        
         background-image: var(--bg-image);
-        background-color: #f4ff9273;
-        background-blend-mode: color-burn;
-        background-size: var(--bg-size, 100px 150px);
-        
+        background-size: var(--bg-size, 500px 400px);
         animation: chill 8s linear infinite;
     }
 </style>

@@ -890,6 +890,46 @@ footer.a {
     }
 }
 
+@keyframes stack-scroll-500-up {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: 0px -400px;
+    }
+}
+
+@keyframes stack-scroll-500-left {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: -500px 0px;
+    }
+}
+
+@keyframes stack-scroll-500-right {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: 500px 0px;
+    }
+}
+
+@keyframes stack-scroll-500-upright {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: 1000px -400px;
+    }
+}
+
 @keyframes stack-scroll-500 {
     0% {
         background-position: 0px 0px;
