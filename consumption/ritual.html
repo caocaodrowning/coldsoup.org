@@ -4,12 +4,12 @@
         <link rel="icon" href="favicon-lores.gif" type="image/gif">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>go to hell you cold soup</title>
+        <title>soup guts</title>
         <link href="/main.css" rel="stylesheet" type="text/css" media="all">
     </head>
     <body>
         <audio loop autoplay id="background">
-           <source src="/assets/audio/devilman_his_heart.mp3">
+           <source src="/assets/audio/ritual_shesshoku.mp3">
         </audio>
         <div id="intro-overlay">
             <main3>
@@ -20,8 +20,8 @@
                 </div>
             </main3>
         </div>
-        <div id="container" data-track="/assets/audio/devilman_his_heart.mp3" 
-        style="--bg-position-start: 0px 0px; --bg-image: url('/assets/consumption/devilman.jpg  '); --bg-size: 500px 400px;">
+        <div id="container" data-track="/assets/audio/ritual_shesshoku.mp3" 
+        style="--bg-position-start: 0px 0px; --bg-image: url('/assets/consumption/ritual.webp'); --bg-size: 650px 345px;">
             <div id="header"></div>
             <nav id="navbar">
               <ul>
@@ -52,14 +52,14 @@
 
 <style id="page-css">
     :root {
-        --bg-image: url('/assets/consumption/devilman.jpg');
+        --bg-image: url('/assets/consumption/ritual.webp');
         --header-image: url('');
         --boxr2: url('/assets/yuka.png');
         --sidebar-image: ;
-        --margin-color: #464545;
-        --main-color: #2b2b2b00;
-        --text-color: #b10000;
-        --project-color: white;
+        --margin-color: #be2525;
+        --main-color: #ffffffee;
+        --text-color: #474747;
+        --project-color: #ffcccc;
         --content: #000000;
     }
 
@@ -75,18 +75,10 @@
         background-image: var(--bg-image);
         background-color: rgb(30, 0, 0);
         background-blend-mode: screen;
-        background-size: 500px 400px;
-        animation: linear infinite !important;
+        background-size: 650px 345px;
+        animation: stack-scroll-650_up 8s linear infinite !important;
         color: var(--text-color);
         animation-play-state: paused;
-    }
-
-    main3 {
-        border: 3px solid var(--text-color);
-    }
-
-    .argh {
-        border: 0px solid var(--text-color);
     }
 
     #intro-overlay {
@@ -97,7 +89,7 @@
         height: 100vh;
         padding-top: 220px;
         background-image: var(--bg-image);
-        background-size: var(--bg-size, 500px 400px);
+        background-size: var(--bg-size, 650px 345px);
         animation: chill 8s linear infinite;
     }
 </style>
