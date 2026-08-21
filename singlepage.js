@@ -63,14 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (currentTrackSource !== targetTrack) {
             sourceElement.setAttribute("src", targetTrack);
             bgAudio.load();
-
-            if (!document.getElementById("intro-overlay")) {
-                bgAudio.play().catch(err => console.log("audio play blocked:", err));
-            }
         } else {
-            if (!document.getElementById("intro-overlay") && bgAudio.paused) {
-                bgAudio.play().catch(err => console.log("audio play blocked:", err));
-            }
+            bgAudio.currentTime = 0; 
+        }
+
+        if (!document.getElementById("intro-overlay")) {
+            bgAudio.play().catch(err => console.log("audio play blocked:", err));
         }
     };
 
@@ -78,7 +76,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const activeContainer = document.getElementById("container");
 
         if (activeContainer && activeContainer.hasAttribute("style")) {
-            const styleAttr = activeContainer.getAttribute("style");
+            let styleAttr = activeContainer.getAttribute("style");
+
+            if (styleAttr.includes(".webp") || styleAttr.includes(".gif")) {
+                const timestamp = Date.now();
+                styleAttr = styleAttr.replace(/(\.webp|\.gif)(['"]?\))/g, `$1?t=${timestamp}$2`);
+            }
+
             document.body.setAttribute("style", styleAttr);
 
             if (styleAttr.includes("--bg-image")) {
