@@ -940,13 +940,23 @@ footer.a {
     }
 }
 
-@keyframes stack-scroll-650_up {
+@keyframes stack-scroll-650-up {
     0% {
         background-position: 0px 0px;
     }
 
     100% {
-        background-position: 0px -650px;
+        background-position: 0px -345px;
+    }
+}
+
+@keyframes stack-scroll-650-right {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: 650px 0px;
     }
 }
 
