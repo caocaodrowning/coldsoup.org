@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const DEFAULT_TRACK = "/assets/audio/swans_i_was_a_prisoner_in_your_skull_snippet.mp3";
 
     const pageCache = {};
-    const imageCache = new Set(); // Keeping this as requested, though currently unused
+    const imageCache = new Set();
 
     const getCleanName = (path) => {
         const file = path.split("/").pop() || "";
