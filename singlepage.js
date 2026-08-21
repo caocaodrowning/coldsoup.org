@@ -15,8 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const path = window.location.pathname;
         const cleanFile = getCleanName(path);
 
-        const activeContainer = document.getElementById("container");
-
         if (path.endsWith("index.html") || path === "/" || path === "" || cleanFile === "index") {
             await handleNavigation("root.html");
             history.replaceState({ url: "root.html" }, "", "root");
@@ -27,8 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 await handleNavigation(cleanFile + ".html");
             }
         }
-
-        manageAudioTracks();
     };
 
     document.addEventListener("click", (e) => {
@@ -40,62 +36,78 @@ document.addEventListener("DOMContentLoaded", () => {
 
             overlay.style.opacity = "0";
 
-            setTimeout(() => {
-                document.body.classList.add("animation-running");
-                syncStylesToBody();
-            }, 300);
-
-            setTimeout(() => {
+            setTimeout(async () => {
                 overlay.remove();
-                manageAudioTracks();
-            }, 500);
+                document.body.classList.add("animation-running");
+                await syncMedia(); 
+            }, 300);
         }
     });
 
-    const manageAudioTracks = () => {
-        const activeContainer = document.getElementById("container");
-        if (!activeContainer) return;
+    const syncMedia = async (targetContainer) => {
+        const containerToRead = targetContainer || document.getElementById("container");
+        if (!containerToRead) return;
+        
+        let styleAttr = containerToRead.getAttribute("style") || "";
+        const targetTrack = containerToRead.getAttribute("data-track") || DEFAULT_TRACK;
 
-        const targetTrack = activeContainer.getAttribute("data-track") || DEFAULT_TRACK;
+        let bgUrl = null;
+        let cacheBustedStyle = styleAttr;
+
+        const bgMatch = styleAttr.match(/url\(['"]?(.*?\.(webp|gif))['"]?\)/);
+        if (bgMatch) {
+            const originalUrl = bgMatch[1];
+            bgUrl = `${originalUrl}?t=${Date.now()}`;
+            cacheBustedStyle = styleAttr.replace(originalUrl, bgUrl);
+        }
+
+        const loadPromises = [];
+
+        if (bgUrl) {
+            loadPromises.push(new Promise(resolve => {
+                const img = new Image();
+                img.onload = resolve;
+                img.onerror = resolve; 
+                img.src = bgUrl;
+            }));
+        }
+
         const sourceElement = bgAudio.querySelector("source");
         const currentTrackSource = sourceElement.getAttribute("src");
+
+        bgAudio.pause(); 
 
         if (currentTrackSource !== targetTrack) {
             sourceElement.setAttribute("src", targetTrack);
             bgAudio.load();
-        } else {
-            bgAudio.currentTime = 0; 
         }
 
-        if (!document.getElementById("intro-overlay")) {
-            bgAudio.play().catch(err => console.log("audio play blocked:", err));
-        }
-    };
-
-    const syncStylesToBody = () => {
-        const activeContainer = document.getElementById("container");
-
-        if (activeContainer && activeContainer.hasAttribute("style")) {
-            let styleAttr = activeContainer.getAttribute("style");
-
-            if (styleAttr.includes(".webp") || styleAttr.includes(".gif")) {
-                const timestamp = Date.now();
-                styleAttr = styleAttr.replace(/(\.webp|\.gif)(['"]?\))/g, `$1?t=${timestamp}$2`);
+        loadPromises.push(new Promise(resolve => {
+            if (bgAudio.readyState >= 3) { 
+                resolve();
+            } else {
+                bgAudio.addEventListener("canplaythrough", resolve, { once: true });
+                bgAudio.addEventListener("error", resolve, { once: true });
             }
+        }));
 
-            document.body.setAttribute("style", styleAttr);
+        await Promise.all(loadPromises);
 
-            if (styleAttr.includes("--bg-image")) {
+        if (cacheBustedStyle) {
+            document.body.setAttribute("style", cacheBustedStyle);
+            if (cacheBustedStyle.includes("--bg-image")) {
                 document.body.classList.add("custom-bg-active");
             } else {
                 document.body.classList.remove("custom-bg-active");
             }
         } else {
+            document.body.removeAttribute("style");
             document.body.classList.remove("custom-bg-active");
+        }
 
-            document.body.style.removeProperty("--bg-image");
-            document.body.style.removeProperty("--bg-size");
-            document.body.style.removeProperty("--bg-position-start");
+        bgAudio.currentTime = 0;
+        if (!document.getElementById("intro-overlay")) {
+            bgAudio.play().catch(err => console.log("audio play blocked:", err));
         }
     };
 
@@ -151,15 +163,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.head.appendChild(styleTag);
                 }
 
-                syncStylesToBody();
-                manageAudioTracks();
+                await syncMedia(targetContainer);
                 bindLinks();
             } else {
                 throw new Error("Missing container in target page.");
             }
         } catch (error) {
             console.error("bruh:", error);
-
             window.location.href = fileUrl;
         }
     };
