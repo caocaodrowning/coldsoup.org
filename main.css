@@ -399,6 +399,15 @@ footer.a {
     text-shadow: black 1px 1px;
 }
 
+.extbutton {
+    width: 88px;
+    height: 31px;
+    margin-left:10px;
+    margin-right: 10px;
+    border: 2px solid #000000;
+    display: inline-block;
+}
+
 .poster {
     height: 120px;
     width: 90px;
