@@ -431,7 +431,7 @@ footer.a {
     Transform: scale(0.95);
     height: 120px;
     width: 90px;
-    display: inline-block;
+    display: inline-flex;
     background-size: 100% 100%;
     opacity: 75%;
     border: black solid 3px;
