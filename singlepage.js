@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(async () => {
                 overlay.remove();
                 document.body.classList.add("animation-running");
-                await syncMedia(); 
+                await syncMedia();
             }, 300);
         }
     });
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const syncMedia = async (targetContainer) => {
         const containerToRead = targetContainer || document.getElementById("container");
         if (!containerToRead) return;
-        
+
         let styleAttr = containerToRead.getAttribute("style") || "";
         const targetTrack = containerToRead.getAttribute("data-track") || DEFAULT_TRACK;
 
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
             loadPromises.push(new Promise(resolve => {
                 const img = new Image();
                 img.onload = resolve;
-                img.onerror = resolve; 
+                img.onerror = resolve;
                 img.src = bgUrl;
             }));
         }
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const sourceElement = bgAudio.querySelector("source");
         const currentTrackSource = sourceElement.getAttribute("src");
 
-        bgAudio.pause(); 
+        bgAudio.pause();
 
         if (currentTrackSource !== targetTrack) {
             sourceElement.setAttribute("src", targetTrack);
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         loadPromises.push(new Promise(resolve => {
-            if (bgAudio.readyState >= 3) { 
+            if (bgAudio.readyState >= 3) {
                 resolve();
             } else {
                 bgAudio.addEventListener("canplaythrough", resolve, { once: true });
@@ -137,6 +137,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (targetContainer) {
                 document.getElementById("container").innerHTML = targetContainer.innerHTML;
+
+                const mdElement = document.getElementById("container").querySelector('[data-markdown]');
+                if (mdElement) {
+                    const mdFile = mdElement.getAttribute('data-markdown');
+                    try {
+                        const mdResponse = await fetch(mdFile);
+                        if (mdResponse.ok) {
+                            const mdText = await mdResponse.text();
+                            mdElement.innerHTML = marked.parse(mdText);
+                        } else {
+                            console.warn("Markdown file missing:", mdFile);
+                        }
+                    } catch (err) {
+                        console.error("Failed to fetch markdown:", err);
+                    }
+                }
 
                 if (targetContainer.hasAttribute("style")) {
                     document.getElementById("container").setAttribute("style", targetContainer.getAttribute("style"));
