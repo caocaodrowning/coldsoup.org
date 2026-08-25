@@ -1,4 +1,4 @@
-At 23:42, on Saturday, in June, I find myself sitting in some kind of children's playground. It's a rather generic though small park with a swing set, a slide, some climbing apparatus, and a bench, I can't say I've been here before. As I sit on the wooden bench and study the intricacies of the rusted no smoking sign, I feel the rivets of my pants press into my hip bones, and clean air harass my lungs.  
+At 23:42, on Saturday, in June, I find myself sitting in some kind of children's playground. It's a rather generic though small park with a swing set, a slide, some climbing apparatus, and a bench, I can't say I've been here before. As I sit on the wooden bench and study the intricacies of the rusted no smoking sign, the seat of the bench, although soft from decades of rains, still presses into my hip bones, and clean air harass my lungs.  
   
 I began as a purely social smoker, but at some point, I found myself outright averse to clean air, and began a life of almost constant chain-smoking. In some sense this is a non-issue for me as I'm without proper work, and therefore have the freedom to smoke whenever I please. But the ever increasing price of cigarettes has worked to dig a deeper and deeper hole into my personal finances.  
   
@@ -60,6 +60,4 @@ My throat is stained and eased by tar, as I turn my head to the man and ask, "yo
 "Ah right, nah I got people to go see probably"  
 "Sure sure, seeya then," he concludes before then marching off into the darkness of the night. Nice guy I guess.  
   
-It's now 23:54, I'm pretty sure I was meant to meet a few people at midnight. I don't even remember what bar it was, but I should probably get moving either way.
-
-<center><p href="/writings/carton/ch2" style="color: red;">END OF PART ONE</p></center><p style="color: white; margin-top: -26px; text-align: right;">written 09/06/26 - 22/08/26</p>
+It's now 23:54, I'm pretty sure I was meant to meet a few people at midnight. I don't even remember what bar it was, but I should probably get moving either way.  
