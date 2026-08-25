@@ -1,4 +1,4 @@
-At 23:42, on Saturday, in June, I find myself sitting in some kind of children's playground. It's a rather generic though small park with a swing set, a slide, some climbing apparatus, and a bench, I can't say I've been here before. As I sit on the wooden bench and study the intricacies of the rusted no smoking sign, the seat of the bench, although soft from decades of rains, still presses into my hip bones, and clean air harass my lungs.  
+At 23:42, on Saturday, in June, I find myself sitting in some kind of children's playground. It's a rather generic though small park with a swing set, a slide, some climbing apparatus, and a bench, I can't say I've been here before. As I sit on the wooden bench and study the intricacies of the rusted no smoking sign, I feel the seat of the bench, although soft from decades of rains, press into my hip bones, and clean air harass my lungs.  
   
 I began as a purely social smoker, but at some point, I found myself outright averse to clean air, and began a life of almost constant chain-smoking. In some sense this is a non-issue for me as I'm without proper work, and therefore have the freedom to smoke whenever I please. But the ever increasing price of cigarettes has worked to dig a deeper and deeper hole into my personal finances.  
   
@@ -50,7 +50,7 @@ He then proceeds to usher me over to the park bench, where he sits down, dramati
 I hand him my haphazard combination of cash, and he glances at it for a moment. Before just dropping it in the suitcase, and tossing out four cartons of cigarettes out onto my lap. I quickly dig into a carton to retrieve a pack, digging my nails into the loosely glued seal and lightly banging the foot of the carton. I then pry out a pack and carefully twirl my hand around the pack, tearing off the strip sealing the paper. Before then finally retrieving my cigarette, and lighting it.  
   
 My throat is stained and eased by tar, as I turn my head to the man and ask, "you want a smoke?" only to be met with empty space.  
-"Nah I don't smoke man," he responds from a distance. I turn my head to follow his voice, spotting him atop a slide eating from a little paper bag of crackers, where did he get those from? or actually when did he even move up there?  
+"Nah I don't smoke man," he responds from a distance. I turn my head to follow his voice, spotting him atop the slide eating from a little paper bag of crackers, where did he get those from?  
 "Alright then, any more direct way I can contact you to buy more?"  
 "Man, we'll cross that bridge when we come to it y'know," he retorts as he slowly slides down the trough of the metal slide in a terribly erratic momentum.  
 "Sure I guess," I resign. Having reached the bottom of the slide he sits for a moment, before shooting to his feet and walking back towards me.  
