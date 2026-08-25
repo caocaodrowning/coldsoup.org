@@ -3,7 +3,7 @@ The time is 03:29, and I find myself in the seat of an open air noodle stand, si
 "Say, why are you dressed in Japanese clothing again?" I inquire.  
 "You know, I was actually educated in Japan."  
 "You were?"  
-"Plenty of people were, you'd be surprised," he then paused for a moment, "not that you would know I suppose, it used to be one of those terrible habits wealthy families have."  
+"Plenty of people were, you'd be surprised," he then paused for a moment, "not that you would know, it used to be one of those terrible habits wealthy families have."  
 "Well I'm a few years too young to know about all that anyway, and you've been dodging the actual question of why you're wearing it all night."  
 "You speak as if I'm an old man, how insulting. Anyway, the cigarette deal went well I suppose?"  
 "Have you seen anyone else smoking Ritz Gold's lately?"  
@@ -18,7 +18,9 @@ As he finishes his noodles we're quickly kicked out of the stand, and move to ai
 "The guy at that stand really had it out for you, should've ordered something," my friend remarks.  
 "Me? he was absolutely glaring at you, you're gonna get beat up dressing like that," I respond, tossing my cigarette butt to the street and lighting up another.  
 "Well he was glaring at both of us really, but he's much more business minded than politically minded that one."  
-"Ah whatever, you want a smoke?"  
+"You a regular?"  
+"Are you?"  
+"Whatever, you want a smoke?"  
 "I'll think about it."  
 "Think about it?"  
 "They're too strong for me, I tried one back at the first bar and could barely get down half."  
@@ -33,8 +35,8 @@ As he finishes his noodles we're quickly kicked out of the stand, and move to ai
 "Well I suppose, our homes are the same direction anyway."  
 "You haven't been kicked out yet?"  
 "Of course not, I'm generally on time with rent."  
-"Wouldn't be hard with a virtuous landlord as yours, do you even have a legal agreement?"  
-"Of course not, she would probably be arrested."  
+"Wouldn't be hard with a virtuous and beautiful landlord as yours, do you even have any legal agreement?"  
+"Of course not, it isn't legal."  
 "Class traitor."  
 "Shut up."  
 "You started it really."  
@@ -53,8 +55,10 @@ As he finishes his noodles we're quickly kicked out of the stand, and move to ai
 "Well I can't say it seems the case I have any work either, unless you've heard otherwise?"  
 "Is this the time to discuss this?" he asks, becoming less and less subtle with his glances.  
 "Fine, have fun with your whore, I'll be going, tell me if any work comes my way."  
-"Sure sure, see you later," he says, having already made his way half into the building.
+"Sure sure, see you later," he says, having already made his way half into the building. I throw my cigarette butt in his direction and start walking again as I light a new one.
 
-I should honestly find better friends, but I wouldn't exactly know where to look. Having left the vicinity of the brothel, I briefly begin to approach another bar, and wonder whether I could just seduce a random woman. But then decide the company at this hour wouldn't be worth it, and simply continue home.
+I should honestly find more wholesome friends, but I wouldn't exactly know where to look. Having left the vicinity of the brothel my destination becomes more definitive, though upon approaching another bar I briefly begin to wonder whether I could just seduce a random woman. But quickly decide the company at this hour wouldn't be worth it, and simply continue home.
 
-[chapter not finished, to be continued]
+Wandering through the inappropriately noisy streets I realise I've gone through two packs already, I still have some thirty-eight remaining. But nonetheless it leads me to wonder how soon I'll be meeting up with that dealer again, I never got his name.
+
+Soon enough I arrive at the relatively derelict room I rent out, the landlady is unfortunately asleep, but there's a meal laid out for me on the table of the main room, perhaps I should've borrowed some money from my friend and followed him. Either way, I silently eat my meal before moving into my room, and just sitting on my bed inspecting my typewriter for a few moments, before then noticing the rising sun, and deciding to check my watch, exactly 05:00.
