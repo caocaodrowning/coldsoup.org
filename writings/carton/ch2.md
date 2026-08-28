@@ -21,7 +21,7 @@ As he finishes his noodles we're quickly kicked out of the stand, and move to ai
 "You a regular?"  
 "Are you?"  
 "Whatever, you want a smoke?"  
-"I'll think about it."  
+"I'll think about it," he smugly says  
 "Think about it?"  
 "They're too strong for me, I tried one back at the first bar and could barely get down half."  
 "So weak."  
@@ -35,15 +35,15 @@ As he finishes his noodles we're quickly kicked out of the stand, and move to ai
 "Well I suppose, our homes are the same direction anyway."  
 "You haven't been kicked out yet?"  
 "Of course not, I'm generally on time with rent."  
-"Wouldn't be hard with a virtuous and beautiful landlord as yours, do you even have any legal agreement?"  
+"Wouldn't be hard with a virtuous and beautiful landlord as yours, do you even have any legal agreement?" he asks, in an oddly grandiose tone of voice.  
 "Of course not, it isn't legal."  
 "Class traitor."  
 "Shut up."  
 "You started it really."  
-"If anyone is a class traitor here it's you, my parents were opium addicts."  
+"If anyone is a class traitor here it's you, my parents were opium addicts," I say, shooting him a victorious expression.  
 "Well I suppose nicotine beats opium."  
 "Y'know I hope someone beats you up."  
-"It's fine, I know you would come to my defence"  
+"It's fine, I know you would come to my defence," he says, waving around one of his hands.  
 "You sure?"  
 "Sure am. Anyway, here's home," he says, as he boorishly smiles and points towards what I believe is a brothel.  
 "Aren't you married?"  
@@ -61,6 +61,8 @@ I should honestly find more wholesome friends, but I wouldn't exactly know where
 
 Wandering through the inappropriately noisy streets I realise I've gone through two packs already, I still have some thirty-eight remaining. But nonetheless it leads me to wonder how soon I'll be meeting up with that dealer again, I never got his name.
 
-Soon enough I arrive at the relatively derelict room I rent, the landlady is unfortunately asleep, but there's a meal laid out for me on the table of the main room. Perhaps I should've borrowed some money from my friend and followed him. Either way, I silently eat my meal before moving into my room. I settle onto my uncharacteristically well padded bed, and slowly sink further as I simply allow time to pass. Inspecting my typewriter I notice the worn legends on the keys, it fills me with an unusual sort of sadness seeing as it's likely the most expensive thing I own. As I ponder the potential cost of getting it serviced, I notice the rising sun peeking in through the clouds, deciding to check my watch, exactly 05:00.
+Soon enough I arrived at the relatively derelict room I rent, the landlady was unfortunately asleep, but there was a meal laid out for me on the table of the main room. Perhaps I should've borrowed some money from my friend and followed him. Regardless, I spent a few minutes silently eating my meal before moving then into my room. Slowly sinking into my uncharacteristically well padded bed, as I just sat and let time pass.
 
-This is a reasonably quiet part of the city, but nevertheless I should probably try to sleep before it becomes too bright or loud. And so I finish my cigarette, and change positions a little to lie down. Any kind of blanket is really unneeded in this kind of temperature, but nevertheless I begin to instinctively pull one towards as I grow colder and colder, and sleep inches closer, soon face to face, I fall into it.
+Eyes hanging on my typewriter I noticed the worn legends on the keys, it filled me with an unusual sort of sadness, seeing as it's likely the most expensive thing I own. As I pondered the potential cost of getting it serviced, I noticed the rising sun peeking in through the clouds, deciding to check my watch, exactly 05:00.
+
+The room I rent is in a reasonably quiet part of the city, but nevertheless I thought I should probably try to sleep before it becomes too bright or loud. And so I finished my cigarette, and switched positions a little to lay on my back. Any kind of blanket is really unneeded in this kind of temperature, but nevertheless I began to instinctively pull one towards as I grew colder and colder, and sleep inched closer, soon face to face, I fell into it.
