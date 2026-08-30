@@ -1,4 +1,4 @@
-The time is 03:29, and I find myself in the seat of an open air noodle stand, aside from an old friend of mine. Lard and capsaicin stick to the hot air and irritate my pores, and we're both forced to ignore the glares of the shop owner. As I gleefully suck away on my new Ritz Gold cigarettes, my friend slurps away at his noodles. For some reason he's dressed in a kimono, dyed an ugly shade of green.  
+The time is 03:29, and I find myself in the seat of an open air noodle stand, aside an old friend of mine. Lard and capsaicin stick to the hot air and irritate my pores, and we're both forced to ignore the glares of the shop owner. As I gleefully suck away on my new Ritz Gold cigarettes, my friend slurps away at his noodles. For some reason he's dressed in a kimono, dyed an ugly shade of green.  
 
 "Say, why are you dressed in Japanese clothing again?" I inquire.  
 "You know, I was actually educated in Japan."  
@@ -26,7 +26,7 @@ As he finishes his noodles we're quickly kicked out of the stand, and move to ai
 "They're too strong for me, I tried one back at the first bar and could barely get down half."  
 "So weak."  
 "Maybe."  
-"You're always smoking those light cigarettes, why even smoke? Very petit bourgeoise habit."  
+"You're always smoking those light cigarettes, why even smoke? Very petit-bourgeoise habit."  
 "Don't even joke."  
 "Ah, whatever, more for me," I decide. As we arrive on a fork in the road, I ask "where are we actually going again?"  
 "I'm going home, you can go wherever you want."  

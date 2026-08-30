@@ -6,7 +6,7 @@ That's what led me to this park, a friend of mine heard about some dealer who se
   
 The hands of my decrepit wristwatch now point to 23:44. We were supposed to meet at 23:30. I guess I can't expect a guy who sells contraband cigarettes to have great timekeeping, but I *am* starting to wonder whether I'm in the right place. Having sat for long enough I decide to stand up and stretch my back to relieve some pain.
 
-I was never especially good at calisthenics but nevertheless became rather invested in my stretching. when suddenly a blaring noise assails my eardrums; It's a public phone ringing a little to the right of the entrance. I haven't seen too many phones in places like this, but would have to guess it's my contact considering there's no one else in the park, or the general vicinity for that matter. I quietly dash towards the odd looking phone and quickly raise the metal handset to my ear.
+I was never especially good at calisthenics but nevertheless became rather invested in my stretching, when suddenly a blaring noise assails my eardrums; It's a public phone ringing a little to the right of the entrance. I haven't seen too many phones in places like this, but would have to guess it's my contact considering there's no one else in the park, or the general vicinity for that matter. I quietly dash towards the odd looking phone and quickly raise the metal handset to my ear.
 
 "Hello?" I inquire into the mouthpiece, only to be met with silence.  
 After a few moments of silence, the receiver finally spits out "You looking for The Ritz?" What the fuck is 'The Ritz'?  
@@ -18,7 +18,7 @@ I began to question, "Wha-" before I heard a sudden click, and a dial tone; he h
   
 My confusion grows as I take a few steps away from the phone and start to pace in a circle――I quickly come to a stop though when I come to face a previously unregistered tree. It's a lone tree standing without any neighbours, and it's rather short too. As my eyes investigated the tree further, they eventually landed on the trunk, where I then stared intently at the texture of the bark. The intensity of my gaze grew and grew as its focus moved from the grit of the bark, to the fuzz of my then unfocused eyes.  
   
-My mind drained entirely of thoughts, and I felt a strange sort of peace. But my head soon surged again with sensation when I was struck by a parched feeling at the top of my throat. I tried to swallow and sooth the dry feeling, but the soreness remained. My hand unconsciously reached for my empty pockets when suddenly, I felt something coarse yet flexible slither from my nape, to the base of my skull, and around to my collarbone.  
+My mind drained entirely of thoughts, and I felt a strange sort of peace. But my head soon surged again with sensation when I was struck by a parched feeling at the top of my throat. I tried to swallow and soothe the dry feeling, but the soreness remained. My hand unconsciously reached for my empty pockets when suddenly, I felt something coarse yet flexible slither from my nape, to the base of my skull, and around to my collarbone.  
   
 It began to softly sink into the various muscles on my shoulder, and as my body was subtly pushed forwards, the caressing of my tendons turned into a grip, as a man suddenly pulled me back to him and loosely wrapped his arm around my neck.  
   
@@ -58,6 +58,6 @@ My throat is stained and eased by tar, as I turn my head to the man and ask, "yo
 "Bed?"  
 "Well you seem pretty out of it from my perspective."  
 "Ah right, nah I got people to go see probably"  
-"Sure, sure, seeya then" he concludes before marching off into the darkness of the night. Nice guy I guess.  
+"Sure, sure, seeya then," he concludes before marching off into the darkness of the night. Nice guy I guess.  
   
 It's now 23:54, I'm pretty sure I was meant to meet a few people at midnight. I don't even remember what bar it was, but I should probably get moving either way.  
